@@ -1,0 +1,359 @@
+﻿
+@{
+    ViewData["Title"] = "اسناد و ارتباط";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                            <li class="nav-item mr-1">
+                                <a class="nav-link bg-dark" href="#" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-folder-plus"></i> سند جدید</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link bg-info" href="#"><i class="fa fa-search"></i> جستجو</a>
+                            </li>
+                            <li class="nav-item float-left ml-auto">
+                                <a class="nav-link" id="pills-incoming-tab" data-toggle="pill" href="#pills-incoming" role="tab" aria-controls="pills-incoming" aria-selected="false">وارده</a>
+                            </li>
+                            <li class="nav-item float-left ml-1">
+                                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-outgoing" role="tab" aria-controls="pills-outgoing" aria-selected="false">صادره</a>
+                            </li>
+                            <li class="nav-item float-left ml-1">
+                                <a class="nav-link active" id="pills-all-tab" data-toggle="pill" href="#pills-all" role="tab" aria-controls="pills-all" aria-selected="true">همه</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card-body p-0">
+
+                        <table class="table table-condensed doc-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10px">#</th>
+                                    <th>مبدأ / مقصد</th>
+                                    <th>نمبر ثبت</th>
+                                    <th>تاریخ ثبت</th>
+                                    <th style="width: 40px">مشاهده</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="bg-olive align-middle" rowspan="2">
+                                        <p class="text-center text-bold align-baseline m-0" style="writing-mode:vertical-rl; text-orientation:mixed;">
+                                            وارده
+                                        </p>
+                                    </td>
+                                    <td colspan="4">
+                                        <a href="#">
+                                            <h6 class="m-0">
+                                                به جواب مکتوب شماره ۱۱۱۱ در رابطه با سیستم های معلوماتی دفتر معاونیت دوم
+                                                <span class="badge badge-success">استعلام</span>
+                                                <small class="text-secondary float-left">تاریخ ثبت سیستم: ۱۳۹۸/۰۷/۰۱</small>
+                                            </h6>
+
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p class="text-secondary"><strong>گیرنده:</strong> ریاست دفتر</p>
+                                        <p class="text-danger m-0"><strong>ارسال کننده:</strong> اداره امور ریاست جمهوری</p>
+                                    </td>
+                                    <td>
+                                        <p class="text-secondary"><strong>نمبر ثبت داخلی:</strong> ۱۸۵۶۷</p>
+                                        <p class="m-0"><strong>نمبر ثبت اصلی:</strong> ۳۲۴۴۳</p>
+                                    </td>
+                                    <td>
+                                        <p class="text-secondary"><strong>تاریخ ثبت داخلی:</strong> ۱۳۹۸/۰۷/۰۱</p>
+                                        <p class="m-0"><strong>تاریخ ثبت اصلی:</strong> ۱۳۹۸/۰۶/۳۱</p>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-secondary" title="دانلود سند"><i class="fa fa-3x fa-file-alt"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-1" colspan="5">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="bg-warning align-middle" rowspan="2">
+                                        <p class="text-center text-bold align-baseline m-0" style="writing-mode:vertical-rl; text-orientation:mixed;">
+                                            صادره
+                                        </p>
+                                    </td>
+                                    <td colspan="4">
+                                        <a href="#">
+                                            <h6 class="m-0">
+                                                ارائه گزارش اجراآت در مورد تحقیق مصوبات تحت کار شورای عالی اقتصادی
+                                                <span class="badge badge-info">مکتوب</span>
+                                            </h6>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p class="text-secondary"><strong>ارسال کننده:</strong> ریاست دفتر</p>
+                                        <p class="text-danger m-0"><strong>گیرنده:</strong> اداره امور ریاست جمهوری</p>
+                                    </td>
+                                    <td>
+                                        <p class="text-secondary"><strong>نمبر ثبت داخلی:</strong> ۱۸۵۶۷</p>
+
+                                    </td>
+                                    <td>
+                                        <p class="text-secondary"><strong>تاریخ ثبت داخلی:</strong> ۱۳۹۸/۰۷/۰۱</p>
+
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-dark"><i class="fa fa-3x fa-file-alt"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-1" colspan="5">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="bg-warning align-middle" rowspan="2">
+                                        <p class="text-center text-bold align-baseline m-0" style="writing-mode:vertical-rl; text-orientation:mixed;">
+                                            صادره
+                                        </p>
+                                    </td>
+                                    <td colspan="4">
+                                        <a href="#">
+                                            <h6 class="m-0">
+                                                ارائه گزارش اجراآت در مورد تحقیق مصوبات تحت کار شورای عالی اقتصادی
+                                                <span class="badge badge-info">مکتوب</span>
+                                            </h6>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p class="text-secondary"><strong>ارسال کننده:</strong> ریاست دفتر</p>
+                                        <p class="text-danger m-0"><strong>گیرنده:</strong> اداره امور ریاست جمهوری</p>
+                                    </td>
+                                    <td>
+                                        <p class="text-secondary"><strong>نمبر ثبت داخلی:</strong> ۱۸۵۶۷</p>
+
+                                    </td>
+                                    <td>
+                                        <p class="text-secondary"><strong>تاریخ ثبت داخلی:</strong> ۱۳۹۸/۰۷/۰۱</p>
+
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-dark"><i class="fa fa-3x fa-file-alt"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-1" colspan="5">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="bg-warning align-middle" rowspan="2">
+                                        <p class="text-center text-bold align-baseline m-0" style="writing-mode:vertical-rl; text-orientation:mixed;">
+                                            صادره
+                                        </p>
+                                    </td>
+                                    <td colspan="4">
+                                        <a href="#">
+                                            <h6 class="m-0">
+                                                ارائه گزارش اجراآت در مورد تحقیق مصوبات تحت کار شورای عالی اقتصادی
+                                                <span class="badge badge-info">مکتوب</span>
+                                            </h6>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p class="text-secondary"><strong>ارسال کننده:</strong> ریاست دفتر</p>
+                                        <p class="text-danger m-0"><strong>گیرنده:</strong> اداره امور ریاست جمهوری</p>
+                                    </td>
+                                    <td>
+                                        <p class="text-secondary"><strong>نمبر ثبت داخلی:</strong> ۱۸۵۶۷</p>
+
+                                    </td>
+                                    <td>
+                                        <p class="text-secondary"><strong>تاریخ ثبت داخلی:</strong> ۱۳۹۸/۰۷/۰۱</p>
+
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-dark"><i class="fa fa-3x fa-file-alt"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-1" colspan="5">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="bg-warning align-middle" rowspan="2">
+                                        <p class="text-center text-bold align-baseline m-0" style="writing-mode:vertical-rl; text-orientation:mixed;">
+                                            صادره
+                                        </p>
+                                    </td>
+                                    <td colspan="4">
+                                        <a href="#">
+                                            <h6 class="m-0">
+                                                ارائه گزارش اجراآت در مورد تحقیق مصوبات تحت کار شورای عالی اقتصادی
+                                                <span class="badge badge-info">مکتوب</span>
+                                            </h6>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p class="text-secondary"><strong>ارسال کننده:</strong> ریاست دفتر</p>
+                                        <p class="text-danger m-0"><strong>گیرنده:</strong> اداره امور ریاست جمهوری</p>
+                                    </td>
+                                    <td>
+                                        <p class="text-secondary"><strong>نمبر ثبت داخلی:</strong> ۱۸۵۶۷</p>
+
+                                    </td>
+                                    <td>
+                                        <p class="text-secondary"><strong>تاریخ ثبت داخلی:</strong> ۱۳۹۸/۰۷/۰۱</p>
+
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-dark"><i class="fa fa-3x fa-file-alt"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-1" colspan="5">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="bg-warning align-middle" rowspan="2">
+                                        <p class="text-center text-bold align-baseline m-0" style="writing-mode:vertical-rl; text-orientation:mixed;">
+                                            صادره
+                                        </p>
+                                    </td>
+                                    <td colspan="4">
+                                        <a href="#">
+                                            <h6 class="m-0">
+                                                ارائه گزارش اجراآت در مورد تحقیق مصوبات تحت کار شورای عالی اقتصادی
+                                                <span class="badge badge-info">مکتوب</span>
+                                            </h6>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p class="text-secondary"><strong>ارسال کننده:</strong> ریاست دفتر</p>
+                                        <p class="text-danger m-0"><strong>گیرنده:</strong> اداره امور ریاست جمهوری</p>
+                                    </td>
+                                    <td>
+                                        <p class="text-secondary"><strong>نمبر ثبت داخلی:</strong> ۱۸۵۶۷</p>
+
+                                    </td>
+                                    <td>
+                                        <p class="text-secondary"><strong>تاریخ ثبت داخلی:</strong> ۱۳۹۸/۰۷/۰۱</p>
+
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-dark"><i class="fa fa-3x fa-file-alt"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-1" colspan="5">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="bg-warning align-middle" rowspan="2">
+                                        <p class="text-center text-bold align-baseline m-0" style="writing-mode:vertical-rl; text-orientation:mixed;">
+                                            صادره
+                                        </p>
+                                    </td>
+                                    <td colspan="4">
+                                        <a href="#">
+                                            <h6 class="m-0">
+                                                ارائه گزارش اجراآت در مورد تحقیق مصوبات تحت کار شورای عالی اقتصادی
+                                                <span class="badge badge-info">مکتوب</span>
+                                            </h6>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p class="text-secondary"><strong>ارسال کننده:</strong> ریاست دفتر</p>
+                                        <p class="text-danger m-0"><strong>گیرنده:</strong> اداره امور ریاست جمهوری</p>
+                                    </td>
+                                    <td>
+                                        <p class="text-secondary"><strong>نمبر ثبت داخلی:</strong> ۱۸۵۶۷</p>
+
+                                    </td>
+                                    <td>
+                                        <p class="text-secondary"><strong>تاریخ ثبت داخلی:</strong> ۱۳۹۸/۰۷/۰۱</p>
+
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-dark"><i class="fa fa-3x fa-file-alt"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-1" colspan="5">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card-footer">
+                        <ul class="pagination pagination m-0 justify-content-center">
+                            <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                        </ul>
+                    </div>
+                </div><!-- /.card -->
+
+
+
+                <div class="card card-primary">                    
+                    
+                </div>
+
+
+                <form asp-action="CreateDocument" asp-controller="Document">
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">افزودن سند جدید</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group row">
+                                        <label for="Subject" class="col-sm-2 control-label">موضوع</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="Subject" placeholder="موضوع سند">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="Type" class="col-sm-2 control-label">نوعیت</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="Type" placeholder="نوعیت سند">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary float-right mr-auto" data-dismiss="modal"><i class="fa fa-times"></i> انصراف</button>
+                                    <button type="submit" class="btn btn-primary"><i class="fa fa-folder-plus"></i> ثبت</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+

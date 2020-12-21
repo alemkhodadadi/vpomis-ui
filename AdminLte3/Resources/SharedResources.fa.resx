@@ -1,0 +1,1107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Absence.Add" xml:space="preserve">
+    <value>ثبت غیرحاضری</value>
+  </data>
+  <data name="Absent" xml:space="preserve">
+    <value>غیرحاضر</value>
+  </data>
+  <data name="Accepted" xml:space="preserve">
+    <value>موافقت‌شده</value>
+  </data>
+  <data name="Acting" xml:space="preserve">
+    <value>سرپرست</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>افزودن</value>
+  </data>
+  <data name="AddRelatedDepartment" xml:space="preserve">
+    <value>افزودن دپارتمنت مرتبط</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>آدرس</value>
+  </data>
+  <data name="Admin" xml:space="preserve">
+    <value>مدیریت</value>
+  </data>
+  <data name="Admin.AboutUs" xml:space="preserve">
+    <value>درباره ما</value>
+  </data>
+  <data name="Admin.AddNewRoleDepartment" xml:space="preserve">
+    <value>افزودن دپارتمنت جدید</value>
+  </data>
+  <data name="Admin.AddRole" xml:space="preserve">
+    <value>نقش جدید</value>
+  </data>
+  <data name="Admin.AddUser" xml:space="preserve">
+    <value>افزودن کاربر جدید</value>
+  </data>
+  <data name="Admin.Config.Countries" xml:space="preserve">
+    <value>کشور / ولایات</value>
+  </data>
+  <data name="Admin.Config.Roles" xml:space="preserve">
+    <value>نقش‌ها</value>
+  </data>
+  <data name="Admin.Config.Settings" xml:space="preserve">
+    <value>تنظیمات</value>
+  </data>
+  <data name="Admin.Config.Users" xml:space="preserve">
+    <value>کاربران</value>
+  </data>
+  <data name="Admin.Configuration" xml:space="preserve">
+    <value>مدیریت سیستم</value>
+  </data>
+  <data name="Admin.Dashboard" xml:space="preserve">
+    <value>دشبورد</value>
+  </data>
+  <data name="Admin.DocPets" xml:space="preserve">
+    <value>لیست عرایض</value>
+  </data>
+  <data name="Admin.EditRole" xml:space="preserve">
+    <value>ویرایش نقش</value>
+  </data>
+  <data name="Admin.EditRoleDepartment" xml:space="preserve">
+    <value>دپارتمنت‌های نقش‌ها</value>
+  </data>
+  <data name="Admin.Edms" xml:space="preserve">
+    <value>مکاتیب الکترونیکی</value>
+  </data>
+  <data name="Admin.Edms.Documents" xml:space="preserve">
+    <value>اسناد الکترونیکی</value>
+  </data>
+  <data name="Admin.Edms.Organizations" xml:space="preserve">
+    <value>ادارات</value>
+  </data>
+  <data name="Admin.Edms.Petitions" xml:space="preserve">
+    <value>ثبت عرایض</value>
+  </data>
+  <data name="Admin.Edms.Registrations" xml:space="preserve">
+    <value>ثبت اسناد</value>
+  </data>
+  <data name="Admin.Edms.Templates" xml:space="preserve">
+    <value>قالب‌ها</value>
+  </data>
+  <data name="Admin.Footer.Copyright" xml:space="preserve">
+    <value>&lt;strong&gt;{0} &amp;copy; &lt;a href="http://vpo.gov.af"&gt;دفتر معاونت دوم ریاست جمهوری&lt;/a&gt;.&lt;/strong&gt; تمامی حقوق محفوظ است.</value>
+  </data>
+  <data name="Admin.Footer.IT" xml:space="preserve">
+    <value>آمریت تکنالوژی معلوماتی</value>
+  </data>
+  <data name="Admin.HR" xml:space="preserve">
+    <value>منابع بشری</value>
+  </data>
+  <data name="Admin.HR.Attendance" xml:space="preserve">
+    <value>سیستم حاضری</value>
+  </data>
+  <data name="Admin.HR.Departments" xml:space="preserve">
+    <value>تشکیل</value>
+  </data>
+  <data name="Admin.HR.Employees" xml:space="preserve">
+    <value>کارمندان</value>
+  </data>
+  <data name="Admin.HR.Positions" xml:space="preserve">
+    <value>بست‌ها</value>
+  </data>
+  <data name="Admin.Petitions" xml:space="preserve">
+    <value>سیستم عرایض</value>
+  </data>
+  <data name="Admin.PublicResources" xml:space="preserve">
+    <value>منابع مشترک و عمومی</value>
+  </data>
+  <data name="Admin.Reports" xml:space="preserve">
+    <value>گزارشات</value>
+  </data>
+  <data name="Admin.RoleDepartment" xml:space="preserve">
+    <value>دپارتمنت</value>
+  </data>
+  <data name="Admin.RoleDepartmentTable" xml:space="preserve">
+    <value>دپارتمنت‌های متصل شده</value>
+  </data>
+  <data name="Admin.RolesList" xml:space="preserve">
+    <value>نقش‌ها</value>
+  </data>
+  <data name="Admin.StaffPhoneNumber" xml:space="preserve">
+    <value>شماره تماس کارمندان</value>
+  </data>
+  <data name="Admin.Title" xml:space="preserve">
+    <value>دفتر معاونت دوم</value>
+  </data>
+  <data name="Admin.UsersList" xml:space="preserve">
+    <value>لیست کاربران</value>
+  </data>
+  <data name="AdminComment" xml:space="preserve">
+    <value>نظر مدیر ثبت کننده</value>
+  </data>
+  <data name="Approve" xml:space="preserve">
+    <value>تأیید درخواست</value>
+  </data>
+  <data name="Archive" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="AreYouSure" xml:space="preserve">
+    <value>آیا از انجام این کار مطمئن هستید؟</value>
+  </data>
+  <data name="Att.GetReport" xml:space="preserve">
+    <value>گزارش حاضری</value>
+  </data>
+  <data name="Attachments" xml:space="preserve">
+    <value>ضمایم</value>
+  </data>
+  <data name="Attendance" xml:space="preserve">
+    <value>سیستم حاضری</value>
+  </data>
+  <data name="Attendance.Index" xml:space="preserve">
+    <value>سیستم حاضری</value>
+  </data>
+  <data name="AttExempt" xml:space="preserve">
+    <value>معاف از حاضری</value>
+  </data>
+  <data name="AverageWorkTime" xml:space="preserve">
+    <value>میانگین ساعات کاری</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازگشت</value>
+  </data>
+  <data name="Badge Color" xml:space="preserve">
+    <value>انتخاب رنگ</value>
+  </data>
+  <data name="BaseTimeIn" xml:space="preserve">
+    <value>ساعت ورود مبنا</value>
+  </data>
+  <data name="BaseTimeOut" xml:space="preserve">
+    <value>ساعت خروج مبنا</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="Casual" xml:space="preserve">
+    <value>اجیر</value>
+  </data>
+  <data name="Casual First" xml:space="preserve">
+    <value>اول (اجیر)</value>
+  </data>
+  <data name="Casual Fourth" xml:space="preserve">
+    <value>چهارم (اجیر)</value>
+  </data>
+  <data name="Casual Second" xml:space="preserve">
+    <value>دوم (اجیر)</value>
+  </data>
+  <data name="Casual Superior" xml:space="preserve">
+    <value>مافوق اجیر</value>
+  </data>
+  <data name="Casual Superior1" xml:space="preserve">
+    <value>مافوق (اجیر)</value>
+  </data>
+  <data name="Casual Third" xml:space="preserve">
+    <value>سوم (اجیر)</value>
+  </data>
+  <data name="Casual Upper" xml:space="preserve">
+    <value>فوق (اجیر)</value>
+  </data>
+  <data name="Casual1" xml:space="preserve">
+    <value>اجیر</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>شماره مسلسل</value>
+  </data>
+  <data name="Common.PleaseSelect" xml:space="preserve">
+    <value>لطفا یک مورد را انتخاب کنید</value>
+  </data>
+  <data name="Confidentiality" xml:space="preserve">
+    <value>محرمیت</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>دشبورد</value>
+  </data>
+  <data name="Dashboard.Index" xml:space="preserve">
+    <value>صفحه اصلی</value>
+  </data>
+  <data name="Date.From" xml:space="preserve">
+    <value>از تاریخ:</value>
+  </data>
+  <data name="Date.To" xml:space="preserve">
+    <value>تا تاریخ:</value>
+  </data>
+  <data name="DateFrom" xml:space="preserve">
+    <value>از تاریخ</value>
+  </data>
+  <data name="DateTo" xml:space="preserve">
+    <value>تا تاریخ</value>
+  </data>
+  <data name="Deadline" xml:space="preserve">
+    <value>مهلت</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Department" xml:space="preserve">
+    <value>اداره داخلی</value>
+  </data>
+  <data name="Department From" xml:space="preserve">
+    <value>بخش ارسال کننده</value>
+  </data>
+  <data name="Department To" xml:space="preserve">
+    <value>بخش دریافت کننده</value>
+  </data>
+  <data name="Departments" xml:space="preserve">
+    <value>بخش‌ها</value>
+  </data>
+  <data name="Departments.Add" xml:space="preserve">
+    <value>افزودن بخش</value>
+  </data>
+  <data name="Departments.Details" xml:space="preserve">
+    <value>جزئیات بخش</value>
+  </data>
+  <data name="Departments.Edit" xml:space="preserve">
+    <value>ویرایش بخش</value>
+  </data>
+  <data name="Destination Code" xml:space="preserve">
+    <value>نمبرثبت اصلی</value>
+  </data>
+  <data name="Destination Date" xml:space="preserve">
+    <value>تاریخ ثبت اصلی</value>
+  </data>
+  <data name="Destination Date from" xml:space="preserve">
+    <value>تاریخ ثبت اصلی از</value>
+  </data>
+  <data name="Destination Date to" xml:space="preserve">
+    <value>تاریخ ثبت اصلی تا</value>
+  </data>
+  <data name="Destination Organization" xml:space="preserve">
+    <value>اداره دریافت کننده</value>
+  </data>
+  <data name="DirectToVPO" xml:space="preserve">
+    <value>تحت کار</value>
+  </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>غیرفعال</value>
+  </data>
+  <data name="Document Code" xml:space="preserve">
+    <value>نمبر مکتوب</value>
+  </data>
+  <data name="Documents" xml:space="preserve">
+    <value>اسناد</value>
+  </data>
+  <data name="Documents.Index" xml:space="preserve">
+    <value>لیست اسناد</value>
+  </data>
+  <data name="Documents.Search" xml:space="preserve">
+    <value>جستجوی اسناد</value>
+  </data>
+  <data name="Documents.Show" xml:space="preserve">
+    <value>نمایش سند</value>
+  </data>
+  <data name="Download.Report" xml:space="preserve">
+    <value>دانلود فایل گزارش </value>
+  </data>
+  <data name="Edms" xml:space="preserve">
+    <value>اسناد دیجیتال</value>
+  </data>
+  <data name="Edms.AddNewDocument" xml:space="preserve">
+    <value>افزودن سند جدید</value>
+  </data>
+  <data name="Edms.AddTemplate" xml:space="preserve">
+    <value>افزودن قالب</value>
+  </data>
+  <data name="Edms.D.AddNew" xml:space="preserve">
+    <value>افزودن سند جدید</value>
+  </data>
+  <data name="Edms.D.All" xml:space="preserve">
+    <value>همه</value>
+  </data>
+  <data name="Edms.D.Incoming" xml:space="preserve">
+    <value>وارده</value>
+  </data>
+  <data name="Edms.D.Internal" xml:space="preserve">
+    <value>داخلی</value>
+  </data>
+  <data name="Edms.D.New" xml:space="preserve">
+    <value>سند جدید</value>
+  </data>
+  <data name="Edms.D.NotSpecified" xml:space="preserve">
+    <value>نامشخص</value>
+  </data>
+  <data name="Edms.D.Outgoing" xml:space="preserve">
+    <value>صادره</value>
+  </data>
+  <data name="Edms.D.Subject" xml:space="preserve">
+    <value>موضوع</value>
+  </data>
+  <data name="Edms.D.Subject.Hint" xml:space="preserve">
+    <value>موضوع سند</value>
+  </data>
+  <data name="Edms.D.SystemRegDate" xml:space="preserve">
+    <value>تاریخ ثبت سیستم: </value>
+  </data>
+  <data name="Edms.D.TableHeader.InOut" xml:space="preserve">
+    <value>مبدأ / مقصد</value>
+  </data>
+  <data name="Edms.D.TableHeader.RegCode" xml:space="preserve">
+    <value>نمبر ثبت</value>
+  </data>
+  <data name="Edms.D.TableHeader.RegDate" xml:space="preserve">
+    <value>تاریخ ثبت</value>
+  </data>
+  <data name="Edms.D.TableHeader.View" xml:space="preserve">
+    <value>نمایش</value>
+  </data>
+  <data name="Edms.D.Type" xml:space="preserve">
+    <value>نوعیت</value>
+  </data>
+  <data name="Edms.DestinationCode" xml:space="preserve">
+    <value>نمبر ثبت اصلی</value>
+  </data>
+  <data name="Edms.DestinationDate" xml:space="preserve">
+    <value>تاریخ ثبت اصلی</value>
+  </data>
+  <data name="Edms.Documents" xml:space="preserve">
+    <value>اسناد مرتبط</value>
+  </data>
+  <data name="Edms.Download" xml:space="preserve">
+    <value>دانلود سند</value>
+  </data>
+  <data name="Edms.EditDocument" xml:space="preserve">
+    <value>ویرایش سند</value>
+  </data>
+  <data name="Edms.EditTemplate" xml:space="preserve">
+    <value>ویرایش قالب</value>
+  </data>
+  <data name="Edms.Receiver" xml:space="preserve">
+    <value>دریافت کننده</value>
+  </data>
+  <data name="Edms.Registration" xml:space="preserve">
+    <value>ثبت اسناد الکترونیکی</value>
+  </data>
+  <data name="Edms.Search" xml:space="preserve">
+    <value>جستجو</value>
+  </data>
+  <data name="Edms.Sender" xml:space="preserve">
+    <value>ارسال کننده</value>
+  </data>
+  <data name="Edms.SourceCode" xml:space="preserve">
+    <value>نمبرثبت داخلی</value>
+  </data>
+  <data name="Edms.SourceDate" xml:space="preserve">
+    <value>تاریخ ثبت داخلی</value>
+  </data>
+  <data name="Edms.TemplateIndex" xml:space="preserve">
+    <value>لیست قالب‌ها</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>ایمیل</value>
+  </data>
+  <data name="Emergency" xml:space="preserve">
+    <value>ضروری</value>
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value>کارمند</value>
+  </data>
+  <data name="Employees" xml:space="preserve">
+    <value>کارمندان</value>
+  </data>
+  <data name="Female" xml:space="preserve">
+    <value>مؤنث</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>فیلتر</value>
+  </data>
+  <data name="First grade" xml:space="preserve">
+    <value>بست اول</value>
+  </data>
+  <data name="FollowUp" xml:space="preserve">
+    <value>تعقیبی</value>
+  </data>
+  <data name="Fourth grade" xml:space="preserve">
+    <value>بست چهارم</value>
+  </data>
+  <data name="FriendlyLetter" xml:space="preserve">
+    <value>نامه دوستانه</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>از تاریخ</value>
+  </data>
+  <data name="Full" xml:space="preserve">
+    <value>کامل</value>
+  </data>
+  <data name="GetReport" xml:space="preserve">
+    <value>گزارش حاضری</value>
+  </data>
+  <data name="Haj" xml:space="preserve">
+    <value>حج</value>
+  </data>
+  <data name="HalfAbsent" xml:space="preserve">
+    <value>نیمه‌حاضر</value>
+  </data>
+  <data name="HireType" xml:space="preserve">
+    <value>نوع خدمت</value>
+  </data>
+  <data name="Hokm" xml:space="preserve">
+    <value>حکم</value>
+  </data>
+  <data name="Holiday" xml:space="preserve">
+    <value>رخصتی</value>
+  </data>
+  <data name="Hours" xml:space="preserve">
+    <value>ساعت</value>
+  </data>
+  <data name="HR" xml:space="preserve">
+    <value>منابع بشری</value>
+  </data>
+  <data name="HR.Absence.Add" xml:space="preserve">
+    <value>ثبت غیرحاضری</value>
+  </data>
+  <data name="HR.Absence.Type" xml:space="preserve">
+    <value> نوع غیرحاضری یا رخصتی</value>
+  </data>
+  <data name="HR.AbsenceList" xml:space="preserve">
+    <value>لیست رخصتی‌ها</value>
+  </data>
+  <data name="HR.AbsentList" xml:space="preserve">
+    <value>لیست غیرحاضرین</value>
+  </data>
+  <data name="HR.AddEmployee" xml:space="preserve">
+    <value>افزودن کارمند</value>
+  </data>
+  <data name="HR.AddEmployeePosition" xml:space="preserve">
+    <value>افزودن بست کارمند</value>
+  </data>
+  <data name="HR.Att.Absent" xml:space="preserve">
+    <value>غیرحاضر</value>
+  </data>
+  <data name="HR.AttendanceList" xml:space="preserve">
+    <value>لیست حاضری</value>
+  </data>
+  <data name="HR.AttendanceSearch" xml:space="preserve">
+    <value>جستجوی حاضری</value>
+  </data>
+  <data name="HR.Departments" xml:space="preserve">
+    <value>لیست دپارتمنت‌ها</value>
+  </data>
+  <data name="HR.EditEmployee" xml:space="preserve">
+    <value>ویرایش کارمند</value>
+  </data>
+  <data name="HR.EditEmployeePosition" xml:space="preserve">
+    <value>ویرایش بست کارمند</value>
+  </data>
+  <data name="HR.Employee.Name" xml:space="preserve">
+    <value>نام کارمند</value>
+  </data>
+  <data name="HR.EmployeeSearch" xml:space="preserve">
+    <value>جستجوی کارمند</value>
+  </data>
+  <data name="HR.EmployeesList" xml:space="preserve">
+    <value>لیست کارمندان</value>
+  </data>
+  <data name="HR.Holidays.Add" xml:space="preserve">
+    <value>ثبت تعطیلات</value>
+  </data>
+  <data name="HR.Holidays.Edit" xml:space="preserve">
+    <value>ویرایش روز تعطیل</value>
+  </data>
+  <data name="HR.HolidaysList" xml:space="preserve">
+    <value>لیست تعطیلات</value>
+  </data>
+  <data name="HR.Organizations" xml:space="preserve">
+    <value>لیست ارگان‌ها</value>
+  </data>
+  <data name="HR.Positions" xml:space="preserve">
+    <value>لیست بست‌ها</value>
+  </data>
+  <data name="HR.Profile" xml:space="preserve">
+    <value>پروفایل کارمند</value>
+  </data>
+  <data name="Html" xml:space="preserve">
+    <value>بدنه قالب</value>
+  </data>
+  <data name="Illness" xml:space="preserve">
+    <value>مریضی</value>
+  </data>
+  <data name="Important" xml:space="preserve">
+    <value>مهم</value>
+  </data>
+  <data name="In Service" xml:space="preserve">
+    <value>خدماتی</value>
+  </data>
+  <data name="Incoming" xml:space="preserve">
+    <value>وارده</value>
+  </data>
+  <data name="Inquiry" xml:space="preserve">
+    <value>استعلام</value>
+  </data>
+  <data name="Internal" xml:space="preserve">
+    <value>داخلی</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>لیست</value>
+  </data>
+  <data name="Login.Title" xml:space="preserve">
+    <value>برای شروع وارد سیستم شوید</value>
+  </data>
+  <data name="Maktoob" xml:space="preserve">
+    <value>مکتوب</value>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>مذکر</value>
+  </data>
+  <data name="Master" xml:space="preserve">
+    <value>ماستر</value>
+  </data>
+  <data name="Maternity" xml:space="preserve">
+    <value>زایمان</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>شماره تماس</value>
+  </data>
+  <data name="Month1" xml:space="preserve">
+    <value>حمل</value>
+  </data>
+  <data name="Month10" xml:space="preserve">
+    <value>جدی</value>
+  </data>
+  <data name="Month11" xml:space="preserve">
+    <value>دلو</value>
+  </data>
+  <data name="Month12" xml:space="preserve">
+    <value>حوت</value>
+  </data>
+  <data name="Month2" xml:space="preserve">
+    <value>ثور</value>
+  </data>
+  <data name="Month3" xml:space="preserve">
+    <value>جوزا</value>
+  </data>
+  <data name="Month4" xml:space="preserve">
+    <value>سرطان</value>
+  </data>
+  <data name="Month5" xml:space="preserve">
+    <value>اسد</value>
+  </data>
+  <data name="Month6" xml:space="preserve">
+    <value>سنبله</value>
+  </data>
+  <data name="Month7" xml:space="preserve">
+    <value>میزان</value>
+  </data>
+  <data name="Month8" xml:space="preserve">
+    <value>عقرب</value>
+  </data>
+  <data name="Month9" xml:space="preserve">
+    <value>قوس</value>
+  </data>
+  <data name="More info" xml:space="preserve">
+    <value>مشاهده</value>
+  </data>
+  <data name="Msg.Added" xml:space="preserve">
+    <value>با موفقیت افزوده شد.</value>
+  </data>
+  <data name="Msg.AdminPermissionSet" xml:space="preserve">
+    <value>تنظیم دسترسی‌ها برای اکانت مدیر نیاز نیست!</value>
+  </data>
+  <data name="Msg.Deleted" xml:space="preserve">
+    <value>با موفقیت حذف شد.</value>
+  </data>
+  <data name="Msg.Done" xml:space="preserve">
+    <value>عملیات با موفقیت انجام شد.</value>
+  </data>
+  <data name="Msg.Saved" xml:space="preserve">
+    <value>با موفقیت ذخیره شد.</value>
+  </data>
+  <data name="Msg.Updated" xml:space="preserve">
+    <value>با موفقیت آپدیت شد.</value>
+  </data>
+  <data name="MyWorkedTime" xml:space="preserve">
+    <value>ساعات کاری من</value>
+  </data>
+  <data name="NameEn" xml:space="preserve">
+    <value>نام انگلیسی</value>
+  </data>
+  <data name="NameFa" xml:space="preserve">
+    <value>نام فارسی</value>
+  </data>
+  <data name="NamePos" xml:space="preserve">
+    <value>نام - وظیفه</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>جدید</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>بی علامت</value>
+  </data>
+  <data name="NotRegistered" xml:space="preserve">
+    <value>ثبت‌نشده</value>
+  </data>
+  <data name="NotSpecified" xml:space="preserve">
+    <value>نامشخص</value>
+  </data>
+  <data name="Organization" xml:space="preserve">
+    <value>ارگان بیرونی</value>
+  </data>
+  <data name="Organization.AddNew" xml:space="preserve">
+    <value>اداره جدید</value>
+  </data>
+  <data name="Organization.Edit" xml:space="preserve">
+    <value>ویرایش ارگان</value>
+  </data>
+  <data name="Organization.NameEn" xml:space="preserve">
+    <value>نام انگلیسی</value>
+  </data>
+  <data name="Organization.NameEn.Hint" xml:space="preserve">
+    <value>نام اداره</value>
+  </data>
+  <data name="Organization.NameFa" xml:space="preserve">
+    <value>نام فارسی</value>
+  </data>
+  <data name="Organization.NameFa.Hint" xml:space="preserve">
+    <value>نام اداره</value>
+  </data>
+  <data name="Organizations" xml:space="preserve">
+    <value>ارگان‌ها</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>دیگر</value>
+  </data>
+  <data name="OtherInformation" xml:space="preserve">
+    <value>اطلاعات اضافی</value>
+  </data>
+  <data name="OtherInformationHint" xml:space="preserve">
+    <value>اطلاعات اضافی مانند دلیل حفظ و یا مکان حفظ</value>
+  </data>
+  <data name="Out of grade" xml:space="preserve">
+    <value>خارج رتبه</value>
+  </data>
+  <data name="Outgoing" xml:space="preserve">
+    <value>صادره</value>
+  </data>
+  <data name="Part Time" xml:space="preserve">
+    <value>نیمه وقت</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>پسورد</value>
+  </data>
+  <data name="Percent" xml:space="preserve">
+    <value>فیصد</value>
+  </data>
+  <data name="Permanent" xml:space="preserve">
+    <value>دائمی</value>
+  </data>
+  <data name="Petition.Details" xml:space="preserve">
+    <value>جزئیات</value>
+  </data>
+  <data name="Petition.Filter" xml:space="preserve">
+    <value>فیلتر عرایض</value>
+  </data>
+  <data name="Petition.Status" xml:space="preserve">
+    <value>وضعیت</value>
+  </data>
+  <data name="Petitioner" xml:space="preserve">
+    <value>نام عارض</value>
+  </data>
+  <data name="Petitions" xml:space="preserve">
+    <value>عرایض</value>
+  </data>
+  <data name="Petitions.Edit" xml:space="preserve">
+    <value>ویرایش عریضه</value>
+  </data>
+  <data name="Petitions.Index" xml:space="preserve">
+    <value>لیست عرایض</value>
+  </data>
+  <data name="Petitions.View" xml:space="preserve">
+    <value>نمایش عریضه</value>
+  </data>
+  <data name="PhD" xml:space="preserve">
+    <value>داکتر</value>
+  </data>
+  <data name="Please select an item" xml:space="preserve">
+    <value>لطفا یک مورد را انتخاب کنید</value>
+  </data>
+  <data name="Positions" xml:space="preserve">
+    <value>بست‌ها</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>پرینت</value>
+  </data>
+  <data name="Priority" xml:space="preserve">
+    <value>اولویت</value>
+  </data>
+  <data name="Public" xml:space="preserve">
+    <value>بخش عمومی</value>
+  </data>
+  <data name="Reason" xml:space="preserve">
+    <value>علت</value>
+  </data>
+  <data name="Referee" xml:space="preserve">
+    <value>معرف</value>
+  </data>
+  <data name="Registered" xml:space="preserve">
+    <value>ثبت‌شده</value>
+  </data>
+  <data name="RegisteredAbsent" xml:space="preserve">
+    <value>رخصتی ثبت شده</value>
+  </data>
+  <data name="Registrations" xml:space="preserve">
+    <value>ثبت اسناد</value>
+  </data>
+  <data name="Regular" xml:space="preserve">
+    <value>عادی</value>
+  </data>
+  <data name="Reject" xml:space="preserve">
+    <value>رد درخواست</value>
+  </data>
+  <data name="Rejected" xml:space="preserve">
+    <value>مخالفت‌شده</value>
+  </data>
+  <data name="Related.Documents" xml:space="preserve">
+    <value>اسناد مرتبط</value>
+  </data>
+  <data name="RelatedDepartments" xml:space="preserve">
+    <value>دپارتمنت‌های مرتبط</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>گزارشات</value>
+  </data>
+  <data name="Resources" xml:space="preserve">
+    <value>منابع عمومی</value>
+  </data>
+  <data name="Response" xml:space="preserve">
+    <value>جواب</value>
+  </data>
+  <data name="Reviewer.Select" xml:space="preserve">
+    <value>انتخاب بررسی کننده</value>
+  </data>
+  <data name="Reviewers" xml:space="preserve">
+    <value>بررسی کنندگان</value>
+  </data>
+  <data name="AttachedDocuments" xml:space="preserve">
+    <value>اسناد الحاق شده</value>
+  </data>
+  <data name="Roles.AddNew" xml:space="preserve">
+    <value>افزودن نقش جدید</value>
+  </data>
+  <data name="Roles.AddNewDepartment" xml:space="preserve">
+    <value>افزودن دپارتمنت جدید</value>
+  </data>
+  <data name="Roles.Departments" xml:space="preserve">
+    <value>دپارتمنت‌ها</value>
+  </data>
+  <data name="Roles.IsAdmin" xml:space="preserve">
+    <value>مدیر است؟</value>
+  </data>
+  <data name="Roles.Name" xml:space="preserve">
+    <value>نام نقش</value>
+  </data>
+  <data name="Roles.Name.Hint" xml:space="preserve">
+    <value>نام نقش را وارد کنید</value>
+  </data>
+  <data name="Roles.Note" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Roles.Note.Hint" xml:space="preserve">
+    <value>توضیحات نقش را وارد کنید</value>
+  </data>
+  <data name="Roles.Permission" xml:space="preserve">
+    <value>جوازهای دسترسی</value>
+  </data>
+  <data name="Roles.SetDepartment" xml:space="preserve">
+    <value>تعیین دپارتمنت</value>
+  </data>
+  <data name="Roles.SetPermission" xml:space="preserve">
+    <value>تنظیم دسترسی‌ها</value>
+  </data>
+  <data name="Roles.UserCount" xml:space="preserve">
+    <value>تعداد کاربر</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>ذخیره</value>
+  </data>
+  <data name="Scrunities" xml:space="preserve">
+    <value>کارشناسی</value>
+  </data>
+  <data name="Scrunity" xml:space="preserve">
+    <value>کارشناسی</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>جستجو</value>
+  </data>
+  <data name="Second grade" xml:space="preserve">
+    <value>بست دوم</value>
+  </data>
+  <data name="Secret" xml:space="preserve">
+    <value>محرم</value>
+  </data>
+  <data name="Select Item" xml:space="preserve">
+    <value>لطفا یک مورد انتخاب کنید</value>
+  </data>
+  <data name="SideBar.Body" xml:space="preserve">
+    <value>سرور دانش فرزند حاجی محمد علی، در سال ۱۳۴۰ خورشیدی، در ولایت دایکندی چشم به جهان گشود. تحصیلات ابتدایی را در زادگاه خویش و تحصیلات عالی را در مراکز علمی عراق، سوریه و ایران فرا گرفته است. ایشان از معدود سیاست‌ورزان فرهنگی و فرهنگیان سیاست‌ورز در افغانستان است. هم سیاست را تجربه کرده است و با رمزو‌رازهای آن آشناست، هم در متلاطم‌ترین روزگار این سرزمین، به تأسیس و مدیریت نهادهای تأثیرگذار فرهنگی پرداخته است.</value>
+  </data>
+  <data name="SideBar.Subtitle" xml:space="preserve">
+    <value>معاون رئیس جمهور</value>
+  </data>
+  <data name="SideBar.Title" xml:space="preserve">
+    <value>معرفی استاد سرور دانش</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>ورود به سیستم</value>
+  </data>
+  <data name="Source Code" xml:space="preserve">
+    <value>نمبرثبت داخلی</value>
+  </data>
+  <data name="Source Date" xml:space="preserve">
+    <value>تاریخ ثبت داخلی</value>
+  </data>
+  <data name="Source Date from" xml:space="preserve">
+    <value>تاریخ ثبت داخلی از</value>
+  </data>
+  <data name="Source Date to" xml:space="preserve">
+    <value>تاریخ ثبت داخلی تا</value>
+  </data>
+  <data name="Source Organization" xml:space="preserve">
+    <value>اداره ارسال کننده</value>
+  </data>
+  <data name="Stage.Datetime" xml:space="preserve">
+    <value>در تاریخ {0} ساعت {1} ملاحظه شد.</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>وضعیت</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>موضوع</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>ثبت</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>خلاصه</value>
+  </data>
+  <data name="Superior grade" xml:space="preserve">
+    <value>مافوق رتبه</value>
+  </data>
+  <data name="Tags" xml:space="preserve">
+    <value>تگ‌ها</value>
+  </data>
+  <data name="Template" xml:space="preserve">
+    <value>قالب</value>
+  </data>
+  <data name="Template.BadgeColor" xml:space="preserve">
+    <value>رنگ</value>
+  </data>
+  <data name="Template.IsActive" xml:space="preserve">
+    <value>فعال است؟</value>
+  </data>
+  <data name="Template.Name" xml:space="preserve">
+    <value>نام قالب</value>
+  </data>
+  <data name="Third grade" xml:space="preserve">
+    <value>بست سوم</value>
+  </data>
+  <data name="ThursdayTimeIn" xml:space="preserve">
+    <value>ساعت ورود پنجشنبه‌ها</value>
+  </data>
+  <data name="ThursdayTimeOut" xml:space="preserve">
+    <value>ساعت خروج پنجشنبه‌ها</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>تا تاریخ</value>
+  </data>
+  <data name="Top Secret" xml:space="preserve">
+    <value>فوق محرم</value>
+  </data>
+  <data name="TotalWorkTime" xml:space="preserve">
+    <value>کل ساعات کاری</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>نوع</value>
+  </data>
+  <data name="UnderReview" xml:space="preserve">
+    <value>درحال بررسی</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>نامشخص</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>آپلود</value>
+  </data>
+  <data name="Upper grade" xml:space="preserve">
+    <value>فوق رتبه</value>
+  </data>
+  <data name="Urgent" xml:space="preserve">
+    <value>بسیار مهم</value>
+  </data>
+  <data name="User.Email" xml:space="preserve">
+    <value>ایمیل کاربر</value>
+  </data>
+  <data name="User.Employee" xml:space="preserve">
+    <value>انتصاب کارمند</value>
+  </data>
+  <data name="User.IsActive" xml:space="preserve">
+    <value>فعال؟</value>
+  </data>
+  <data name="User.LastLogin" xml:space="preserve">
+    <value>آخرین ورود</value>
+  </data>
+  <data name="User.Password" xml:space="preserve">
+    <value>رمز</value>
+  </data>
+  <data name="User.RePassword" xml:space="preserve">
+    <value>تکرار رمز</value>
+  </data>
+  <data name="User.Role" xml:space="preserve">
+    <value>نقش کاربر</value>
+  </data>
+  <data name="User.Status" xml:space="preserve">
+    <value>وضعیت</value>
+  </data>
+  <data name="User.UpdatePassFromAD" xml:space="preserve">
+    <value>آپدیت رمز توسط اکتیودایرکتوری؟</value>
+  </data>
+  <data name="User.UseAD" xml:space="preserve">
+    <value>استفاده از اکتیودایرکتوری؟</value>
+  </data>
+  <data name="User.UseDB" xml:space="preserve">
+    <value>استفاده از دیتابیس در صورت عدم دسترسی به اکتیودایرکتوری؟</value>
+  </data>
+  <data name="User.Username" xml:space="preserve">
+    <value>نام کاربری</value>
+  </data>
+  <data name="Users.SetRole" xml:space="preserve">
+    <value>تعیین نقش</value>
+  </data>
+  <data name="Vacation" xml:space="preserve">
+    <value>تفریحی</value>
+  </data>
+  <data name="Vpo.Subtitle" xml:space="preserve">
+    <value>دولت جمهوری اسلامی افغانستان</value>
+  </data>
+  <data name="Vpo.Title" xml:space="preserve">
+    <value>دفتر معاونت دوم ریاست جمهوری</value>
+  </data>
+  <data name="Your.Comment" xml:space="preserve">
+    <value>نظر شما</value>
+  </data>
+  <data name="{0} HR.DepSubCount" xml:space="preserve">
+    <value>{0} دپارتمنت زیرمجموعه</value>
+  </data>
+  <data name="{0} HR.SubPosCount" xml:space="preserve">
+    <value>{0} بست زیرمجموعه</value>
+  </data>
+</root>

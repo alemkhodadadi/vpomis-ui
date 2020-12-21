@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewData["Title"] = "ثبت موتر";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="content">
+    <div class="card">
+        <div class="card-header card-indigo card-outline fixed flex-end">
+            <div class="padding-05rem float-left" style="width: 100%; border-bottom: 1px solid #d1cccc">
+                <div class="btn-group float-left">
+                    <a class="btn btn-md hover-element-info" href="#" data-toggle="modal" data-target="#createCarModal">
+                        ذخیره
+                        <i class="fa fa-save"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <form id="carForm" class="col-lg-12" role="form">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>نوع وسیله</label>
+                            <input class="form-control" autocomplete="off" placeholder="نوع وسیله را انتخاب کنید" />
+                            <span class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>رنگ</label>
+                            <input class="form-control" autocomplete="off" placeholder="رنگ را وارد کنید" />
+                            <span class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>شماره پلیت</label>
+                            <input class="form-control" autocomplete="off" placeholder="شماره پلیت را وارد کنید" />
+                            <span class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>شماره انجن</label>
+                            <input class="form-control" autocomplete="off" placeholder="شماره انجن را وارد کنید" />
+                            <span class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>شماره شاسی</label>
+                            <input class="form-control" autocomplete="off" placeholder="شماره شاسی سیر را وارد کنید" />
+                            <span class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>وضعیت</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>فعال</option>
+                                <option>غیر فعال</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>نوع</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>دولتی</option>
+                                <option>شخصی</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6" style="display: flex; flex-direction: column; align-items: flex-start">
+                            <label>عکس موتر</label>
+                            <a href="#" class="btn btn-info fileinput-button">
+                                <i class="fa fa-plus"></i>
+                                <span> انتخاب عکس</span>
+                                <img src="https://magarticles.magzter.com/articles/138/381460/5dbabcadca0cb/HOT-New-Toyota-Corolla.jpg" class="card-img-top" alt="Responsive image">
+                                <input type="file" class="btn btn-info transport-register" name="files[]" multiple>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <form>
+        <div class="modal fade" id="createCarModal" tabindex="-1" role="dialog" aria-labelledby="createCarModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">ثبت راننده</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group row">
+                            <span class="modal-body-text">آیا از ثبت راننده مطمین هستید؟</span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" data-dismiss="modal" onclick="createCar()"><i class="fa fa-folder-plus"></i> ثبت</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> ذخیره</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts
+{
+    <script>
+        function createCar() {
+            alert("موتر با موفقیت ثبت شد")
+        }
+    </script>
+}
+
+

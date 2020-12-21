@@ -1,0 +1,570 @@
+﻿@{
+    ViewData["Title"] = "TaskManagement";
+    //Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+ 
+<div class="content transport-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card todos-card">
+                    <div class="card-header fixed card-primary card-outline">
+                        <ul class="nav nav-pills tasks-list-header">
+                            <li class="nav-item mr-1">
+                                <a class="nav-link bg-dark cursor-pointer" data-toggle="modal" data-target="#createTaskModal"><i class="fa fa-folder-plus"></i> ثبت آیتم جدید</a>
+                            </li>
+                           
+                            <li class="nav-item float-left ml-1">
+                                <div class="input-group">
+                                    <input type="text" id="carSearchInput" name="query" class="form-control">
+                                    <span class="input-group-append">
+                                        <button class="btn btn-info" onclick="carSearchFunction()">
+                                            <i class="fa fa-search"></i>
+                                            جستجو
+                                        </button>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body todos-card-body">
+                        <div class="row" style="height: 100%">
+                            <div class="col-lg-10 content-parent-manual">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="todaysTasksTab">
+                                        <div class="nav nav-pills" id="todaysTasksListTitle">
+                                            <span>لیست کارهای امروز</span>
+                                            <div class="btn-group tasks-filter-button-group">
+                                                <button type="button" class="btn btn-info dropdown-toggle filter-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fa fa-filter"></i>
+                                                    فیلتر
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-tasks-filter">
+                                                    <a class="dropdown-item" id="100" href="#">test</a>
+                                                </div>
+                                            </div>
+                                            <div class="btn btn-secondary task-filter-selected-mode d-none">
+                                                <button class="btn btn-md" onclick="setFilter()" aria-haspopup="true" aria-expanded="false" href="#">
+                                                    <i class="fa fa-times-circle"></i>
+                                                    <span>فیلتر</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <ul id="todaysTasksList">
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane" id="tasksAheadTab">
+                                        <div id="tasksAheadTabTitle">
+                                            <span>لیست کارهای پیش رو</span>
+                                        </div>
+                                        <ul id="tasksAheadList">
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane" id="allTasksTab">
+                                        <div id="allTasksTabTitle">
+                                            <span>لیست تمام کارها</span>
+                                        </div>
+                                        <ul id="allTasksList">
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane" id="calendarTab">
+                                        <div id="calendarTabTitle">
+                                            <span>لیست کارهای پیش رو</span>
+                                        </div>
+                                        <ul id="calendarTabList">
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane" id="teamTasks">
+                                        <div id="teamTasksTitle">
+                                            <span>لیست کارهای گروهی</span>
+                                        </div>
+                                        <ul id="teamTasksList">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 tabs-parent-manual">
+                                <ul class="nav nav-tabs todos-tabs-ul">
+                                    <li class="nav-item">
+                                        <a class="active nav-link" href="#todaysTasksTab" data-toggle="tab">
+                                            کارهای امروز
+                                            <span class="badge badge-light">4</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#allTasksTab" data-toggle="tab">
+                                            کارهای پیش رو
+                                            <span class="badge badge-light">13</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#allTasksTab" data-toggle="tab">
+                                            تمامی کارها
+                                            <span class="badge badge-light">13</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#calendarTab" data-toggle="tab">
+                                            تقویم
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#projetsTab" data-toggle="tab">
+                                            پروژه ها
+                                            <span class="badge badge-light">7</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form id="AddTodoForm" action="/Todo/AddTodo" method="post">
+        <div class="modal fade" id="createTaskModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ثبت آیتم جدید</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="row">
+                                <label for="Title" class="col-sm-3 col-form-label">عنوان:</label>
+                                <input type="text" id="taskTitle" class="col-sm-7 form-control" name="Title">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label for="staticEmail" class="col-sm-3 col-form-label">نوع آیتم: </label>
+                                <div class="col-sm-7 none-padding-button">
+                                    <a class=" btn-md dropdown-toggle todoType-dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <input type="text"  class="form-control input-sm cursor-pointer todoTypeInputToDisplay" placeholder="نوع آیتم" readonly>
+                                        <input type="hidden" class="todoTypeInputRealValue" name="TodoType">
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-task-status">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row" id="urgentParent">
+                            <label for="IsUrgent" class="col-sm-4 col-form-label">اضطرار: </label>
+                            <label class="switch">
+                                <input type="checkbox" class="primary isUrgent" name="IsUrgent">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="form-group row" id="reminderParent">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">یادآوری: </label>
+                            <label class="switch">
+                                <input type="checkbox" class="primary hasReminder" name="HasReminder">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="form-group row sub-item reminderChild" style="display: none;">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">زمان یادآوری: </label>
+                            <div class="col-sm-8">
+                                <input type="datetime-local" class="form-control" id="reminderTime" name="ReminderTime">
+                            </div>
+                        </div>
+                        <div class="form-group row" id="explanationParent">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">توضیحات: </label>
+                            <label class="switch">
+                                <input type="checkbox" class="primary hasExplanation" name="HasExplanation">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="form-group row sub-item explanationChild" style="display: none;">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">ثبت توضیحات: </label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" id="todoExplanationText" placeholder="توضیحات ..." name="Explanation"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"> انصراف <i class="fa fa-trash"></i></button>
+                        <button type="submit" class="btn btn-secondary">ثبت آیتم <i class="fa fa-check"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form id="EditTodoForm" action="/Todo/EditTodo" method="post">
+        <div class="modal fade" id="editTaskModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ثبت آیتم جدید</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" name="TodoID" id="TodoID" />
+                        <div class="form-group">
+                            <div class="row">
+                                <label for="Title" class="col-sm-3 col-form-label">عنوان:</label>
+                                <input type="text" id="taskTitle" class="col-sm-7 form-control" name="Title">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label for="staticEmail" class="col-sm-3 col-form-label">نوع آیتم: </label>
+                                <div class="col-sm-7 none-padding-button">
+                                    <a class=" btn-md dropdown-toggle todoType-dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <input type="text" class="form-control input-sm cursor-pointer todoTypeInputToDisplay" placeholder="نوع آیتم" readonly>
+                                        <input type="hidden" class="todoTypeInputRealValue" name="TodoType">
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-task-status">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row" id="urgentParent">
+                            <label for="IsUrgent" class="col-sm-4 col-form-label">اضطرار: </label>
+                            <label class="switch">
+                                <input type="checkbox" class="primary isUrgent" name="IsUrgent">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="form-group row" id="reminderParent">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">یادآوری: </label>
+                            <label class="switch">
+                                <input type="checkbox" class="primary hasReminder" name="HasReminder">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="form-group row sub-item reminderChild" style="display: none;">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">زمان یادآوری: </label>
+                            <div class="col-sm-8">
+                                <input type="datetime-local" class="form-control" id="reminderTime" name="ReminderTime">
+                            </div>
+                        </div>
+                        <div class="form-group row" id="explanationParent">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">توضیحات: </label>
+                            <label class="switch">
+                                <input type="checkbox" class="primary hasExplanation" name="HasExplanation">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="form-group row sub-item explanationChild" style="display: none;">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">ثبت توضیحات: </label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" id="todoExplanationText" placeholder="توضیحات ..." name="Explanation"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"> انصراف <i class="fa fa-trash"></i></button>
+                        <button type="submit" class="btn btn-secondary" onclick="checkValues()">ثبت آیتم <i class="fa fa-check"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form id="DeleteTodoForm" action="/Todo/DeleteTodo" method="post">
+        <div class="modal" tabindex="-1" role="dialog" id="deleteTaskModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" name="TodoID" id="TodoID" />
+                        <p>آیا این آیتم حذف شود؟</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"> انصراف <i class="fa fa-trash"></i></button>
+                        <button type="submit" class="btn btn-secondary"> حذف <i class="fa fa-check"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form id="MakeTodoDoneForm" action="/Todo/ChangeTodoStatus" method="post">
+        <div class="modal" tabindex="-1" role="dialog" id="MakeTaskDoneModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" name="TodoID" id="TodoID" />
+                        <p>آیا این آیتم انجام شده است؟</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"> خیر <i class="fa fa-trash"></i></button>
+                        <button type="submit" class="btn btn-secondary"> بله <i class="fa fa-check"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
+    <script type="text/javascript">
+        var spinnerComponent = `<div id="spinner" class="spinner-parent"> <div class="spinner-border" role="status"> <span class="sr-only">Loading...</span> </div> </div>`;
+        function spinnerAppender(targetElement) {
+            $(targetElement).append(spinnerComponent)
+        }
+        var allTeamates = [];
+        var selectedStatus;
+
+        $(document).ready(function () {
+            getTasks();
+            getTodoTypes();
+        });
+
+
+
+
+        function setFilter(item) {
+            console.log("we are in setfilter...", item)
+            if (item) {
+                console.log("sessslected is:0", item.html())
+                $(".task-filter-selected-mode").removeClass("d-none");
+                $(".task-filter-selected-mode span").html(item.html());
+                $(".task-filter-selected-mode span").attr("id", item.attr("id"));
+                $(".tasks-filter-button-group").addClass("d-none")
+                getTasks(item.attr("id"));
+            } else {
+                $(".task-filter-selected-mode").addClass("d-none");
+                $(".tasks-filter-button-group").removeClass("d-none")
+                $(".tasks-filter-button-group").removeAttr("id");
+                $(".task-filter-selected-mode span").html("");
+                getTasks();
+            }
+        }
+
+        function getTodoTypes() {
+            $.ajax({
+                url: "/Todo/GetTodoTypes",
+                cache: false,
+                type: "GET",
+                success: function (response) {
+                    console.log("responset for getTodoTypes isL", response)
+                    response.forEach((todotype) => {
+                        $(".dropdown-menu-tasks-filter, .dropdown-menu-task-status").append(
+                            `<a class="dropdown-item" id=${todotype.value} href="#">${todotype.text}</a>`
+                        )
+                        $(".dropdown-menu-tasks-filter a").on("click", function () {
+                            console.log("onclick filter...")
+                            setFilter($(this));
+                        });
+                        $('.dropdown-menu-task-status a').on('click', function () {
+                            $('.todoType-dropdown-toggle .todoTypeInputToDisplay').val($(this).html());
+                            $('.todoType-dropdown-toggle .todoTypeInputRealValue').val($(this).attr("id"));
+                            selectedStatus = $(this);
+                            if (selectedStatus.attr("id") == "1") {
+                                $("#reminderParent, #assignOthersParent").fadeOut(300);
+                            } else {
+                                $("#reminderParent, #assignOthersParent").fadeIn(300);
+                            }
+                        })
+                    })
+                },
+                error: function (xhr) {
+                    console.log("error in getTodoTypes:", xhr)
+                }
+            });
+        }
+
+        
+
+        async function getTasks(filter) {
+            console.log("filter in getTasks is:", filter)
+            let todoTypeNames = ["", "یادداشت معمولی", "تعقیبی", "شخصی", "دفتری"];
+            await $("#todaysTasksList").empty();
+            spinnerAppender("#todaysTasksList");
+            console.log("we areain get tasks function...")
+            $.ajax({
+                url: "/Todo/Index",
+                cache: false,
+                type: "POST",
+                data: filter ? { filter: filter}:null,
+                success: function (response) {
+                    console.log("responset forrrrrr allrasks isL", response)
+                    console.log("haschildnodes res is:", $("#todaysTasksList").children().length == 0)
+                    $("#spinner").remove();
+                    response.forEach((todo) => {
+                        $("#todaysTasksList").children().length == 0 && $("#allTasksList, #tasksAheadList, #todaysTasksList").prepend(
+                            `<li>
+                                <a class="urgent-task-sign ${!todo.isUrgent && 'display-none'}">
+                                    <i class="fa fa-star" style="color: red"></i>
+                                </a>
+                                <div class="todo-item-parent col-md-12">
+                                    <div class="todo-item-left-section col-sm-4 flexed-centerd-horizontal">
+                                        <span class="todo-item-title">${todo.title}</span>
+                                    </div>
+                                    <div class="todo-item-right-section col-sm-8 ">
+                                        <div class="row">
+                                            <div class="col-sm-9 flexed-centerd-horizontal">
+                                                <span class="list-item-titles">نوع: ${todoTypeNames[todo.todoType]} </span>
+                                                <span class="todo-item-createdAt">ثبت: ${new Date(todo.createdAt).toISOString().replace(".000Z", "").substring(0, 19)}</span>
+                                                <span class="todo-item-createdAt">مهلت: ${new Date(todo.reminderTime).toISOString().replace(".000Z", "").substring(0, 19)}</span>
+                                            </div>
+                                            <div class="col-sm-3 flexed-left-horizontal">
+                                                <a class="btn btn-md task-left-side-icons" onclick='openViewTaskModal(${JSON.stringify(todo)})' aria-haspopup="true" aria-expanded="false" href="#">
+                                                    <i class="fa fa-edit"></i>
+                                                </a>
+                                                <a class="btn btn-md task-left-side-icons" id="makeDone" onclick='openMakeTaskDoneModal(${JSON.stringify(todo)})' aria-haspopup="true" aria-expanded="false" href="#" href="#">
+                                                    <i class="fa fa-check-circle"></i>
+                                                </a>
+                                                <div class="dropdown task-left-side-icons">
+                                                    <a class="btn btn-md dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                                                        <i class="fa fa-ellipsis-h"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                        <a class="dropdown-item" onclick='openDeleteTaskModal(${JSON.stringify(todo)})' href="#">حذف</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>`
+                        )
+                    });
+                },
+                error: function (xhr) {
+                    console.log("error in ajadx:", xhr)
+                }
+            });
+        }
+
+        $(document).on("change", "#assignTeammateSelect", function (event) {
+            let selectedID = $(this).find(':selected').data('id');
+            $(".task-assigned-employees-list").prepend(`
+                <li class="task-assigned-employee" id=${selectedID}>
+                    <a class="btn btn-md" href="#" onclick='removeAssignedEmployees(${JSON.stringify(($(this).val()))})'>
+                        <i class="fa fa-times-circle"></i>
+                    </a>
+                    <span>${$(this).val()}</span>
+                </li>
+            `)
+            allTeamates.push($(this).val())
+        })
+
+        $(document).on('click', '.task-assigned-employees-list a', function () {
+            $(this).parent().remove();
+        });
+
+        function removeAssignedEmployees(item) {
+            let itemToBeRRRemoved = $(".task-assigned-employees-list").find(`#${item}`);
+            itemToBeRRRemoved.remove();
+        }
+
+        function clearValues() {
+            $("#taskTitle").val('');
+            $('.todoType-dropdown-toggle input').val('');
+            $('.isUrgent').prop("checked", false);
+            $('.hasReminder').prop("checked", false);
+            $("#reminderTime").val('');
+            $('#assignOthersSwitch').prop("checked", false);
+            $(".task-assigned-employees-list").empty();
+            $(".hasExplanation").prop("checked", false);
+            $("#todoExplanationText").val('');
+            $("#assignOthersChild, .reminderChild, .explanationChild").fadeOut();
+        }
+
+        $("#editTaskModal, #createTaskModal").on('hidden.bs.modal', function () {
+            clearValues();
+        })
+
+        function checkValues() {
+            let dataToSend = {
+                title: $("#EditTodoForm #taskTitle").val(),
+                todoType: $('#EditTodoForm .todoType-dropdown-toggle input').val() ? $('#EditTodoForm .todoType-dropdown-toggle input').val() : "40",
+                hasReminder: $('#EditTodoForm .hasReminder').prop("checked"),
+                reminderTime: $("#EditTodoForm #reminderTime").val(),
+                teamwork: $("#EditTodoForm #assignOthersSwitch").prop("checked"),
+                hasExplanation: $("#EditTodoForm .hasExplanation").prop("checked"),
+                explanation: $("#EditTodoForm #todoExplanationText").val()
+            }
+            console.log("data to ssenedd is:", dataToSend)
+        }
+
+        $('.hasReminder').change(function () {
+            let switchStatus = $(this).prop('checked');
+            $(".hasReminder").val(switchStatus);
+            if (switchStatus) {
+                $(".reminderChild").fadeIn(200);
+            } else {
+                $(".reminderChild").fadeOut(200);
+            }
+        })
+
+        $('.isUrgent').change(function () {
+            let switchStatus = $(this).prop('checked');
+            $(".isUrgent").val(switchStatus);
+        })
+
+        $('#assignOthersSwitch').change(function () {
+            let switchStatus = $(this).prop('checked');
+            if (switchStatus) {
+                $("#assignOthersChild").fadeIn(200);
+            } else {
+                $("#assignOthersChild").fadeOut(200);
+            }
+        })
+
+        $('.hasExplanation').change(function () {
+            let switchStatus = $(this).prop('checked');
+            $(".hasExplanation").val(switchStatus);
+            if (switchStatus) {
+                $(".explanationChild").fadeIn(200);
+            } else {
+                $(".explanationChild").fadeOut(200);
+            }
+        })
+
+       
+
+        function openViewTaskModal(todo) {
+            $("#EditTodoForm #TodoID").val(todo.todoID);
+            $("#EditTodoForm #taskTitle").val(todo.title);
+            $('#EditTodoForm .todoType-dropdown-toggle .todoTypeInputRealValue, #EditTodoForm .todoType-dropdown-toggle .todoTypeInputToDisplay').val(todo.todoType);
+            $('#EditTodoForm .isUrgent').prop("checked", todo.isUrgent);
+            $('#EditTodoForm .isUrgent').val(todo.isUrgent);
+            $('#EditTodoForm .hasReminder').prop("checked", todo.hasReminder);
+            $('#EditTodoForm .hasReminder').val(todo.hasReminder);
+            if (todo.hasReminder) { $(".reminderChild").fadeIn(200)}
+            $("#EditTodoForm #reminderTime").val(new Date(todo.reminderTime).toISOString().replace(".000Z", "").substring(0, 19));
+            $("#EditTodoForm .hasExplanation").prop("checked", todo.hasExplanation);
+            if (todo.hasExplanation) {
+                console.log("todo has explanation....")
+                $(".explanationChild").fadeIn(200)
+            };
+            $("#EditTodoForm .hasExplanation").val(todo.hasExplanation);
+            $("#EditTodoForm #todoExplanationText").val(todo.explanation);
+            $('#EditTodoForm #editTaskModal').modal('show');
+        }
+
+        function openDeleteTaskModal(todo) {
+            $("#DeleteTodoForm #TodoID").val(todo.todoID);
+            $('#DeleteTodoForm #deleteTaskModal').modal('show');
+        }
+
+        function openMakeTaskDoneModal(todo) {
+            $("#MakeTodoDoneForm #TodoID").val(todo.todoID);
+            $('#MakeTodoDoneForm #MakeTaskDoneModal').modal('show');
+        }
+    </script>
+}
+

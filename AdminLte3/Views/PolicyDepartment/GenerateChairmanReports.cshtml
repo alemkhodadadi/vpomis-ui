@@ -1,0 +1,168 @@
+﻿
+@{
+    ViewData["Title"] = "ثبت گزارش آمریت ها";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="content transport-content">
+    <div class="card">
+        <div class="card-header card-indigo card-outline fixed flex-end">
+            <div class="padding-05rem float-left" style="width: 100%; border-bottom: 1px solid #d1cccc">
+                <div class="btn-group float-left">
+                    <a class="btn btn-md hover-element-info" href="#">
+                        ذخیره
+                        <i class="fa fa-save"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <form id="carForm" class="col-lg-12" role="form">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>نوع وسیله</label>
+                            <input class="form-control" autocomplete="off" placeholder="نوع وسیله را انتخاب کنید" />
+                            <span class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>رنگ</label>
+                            <input class="form-control" autocomplete="off" placeholder="رنگ را وارد کنید" />
+                            <span class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>شماره پلیت</label>
+                            <input class="form-control" autocomplete="off" placeholder="شماره پلیت را وارد کنید" />
+                            <span class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>شماره انجن</label>
+                            <input class="form-control" autocomplete="off" placeholder="شماره انجن را وارد کنید" />
+                            <span class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>شماره شاسی</label>
+                            <input class="form-control" autocomplete="off" placeholder="شماره شاسی سیر را وارد کنید" />
+                            <span class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>وضعیت</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>فعال</option>
+                                <option>غیر فعال</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>نوع</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>دولتی</option>
+                                <option>شخصی</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6" style="display: flex; flex-direction: column; align-items: flex-start">
+                            <label>عکس موتر</label>
+                            <a href="#" class="btn btn-info fileinput-button">
+                                <i class="fa fa-plus"></i>
+                                <span> انتخاب عکس</span>
+                                <input type="file" class="btn btn-info transport-register" name="files[]" multiple>
+                            </a>
+                        </div>
+                        <div class="form-group col-md-6 car-card-col-parent">
+                            <label>car image</label>
+                            <div class="card car-card">
+                                <img src="https://magarticles.magzter.com/articles/138/381460/5dbabcadca0cb/HOT-New-Toyota-Corolla.jpg" class="card-img-top" alt="Responsive image">
+                                <div class="card-body row-button-parent">
+                                    <a href="#" class="card-link">تغییر<i class="fa fa-edit"></i></a>
+                                    <a href="#" class="card-link">حذف<i class="fa fa-trash"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script src="~/lib/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="~/lib/blueimp-JavaScript-Templates/js/tmpl.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.fileupload.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.fileupload-validate.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.fileupload-ui.js"></script>
+    <script type="text/javascript">
+        var drivers = [
+            {
+                name: 'علی مظفری',
+                job: 'آمریت بخش سیستم معلوماتی',
+                phoneNumber: '0775425236',
+                activity: 'فعال',
+                explanation: 'نام در سیستم موجود نیست	',
+                employee: 'آمریت انکشافی سیستم معلوماتی اداری',
+                image: 'http://www.tabassum-whc.org/wp-content/uploads/2019/03/IMG_3396.jpg',
+            },
+            {
+                name: 'صالح باقری',
+                job: 'مدیریت انکشافی سیستم معلوماتی اداری',
+                phoneNumber: '0758465925',
+                activity: 'فعال',
+                explanation: 'تخلص در سیستم موجود نیست	',
+                employee: 'مدیریت انکشافی سیستم معلوماتی اداری',
+                image: 'http://www.tabassum-whc.org/wp-content/uploads/2019/03/IMG_3396.jpg',
+            },
+            {
+                name: 'رمضان رحیمی',
+                job: 'مدیر شبکه',
+                phoneNumber: '0745256352',
+                activity: 'فعال',
+                explanation: 'ایشان مدیر شبکه در قسمت آی تی هستند	',
+                employee: 'کارمند قسمت آی تی',
+                image: 'https://media-exp1.licdn.com/dms/image/C4D03AQEWusNLA1yluA/profile-displayphoto-shrink_400_400/0?e=1607558400&v=beta&t=IIb8SMUeu9eBCypBYCG3HovpEI8cOciKNnm69MIkOb4',
+            },
+            {
+                name: 'حسین عباسی',
+                job: 'مدیریت عمومی در بخش آی تی',
+                phoneNumber: '0745520320',
+                activity: 'فعال',
+                explanation: 'مدیریت بخش عمومی را انجام میدهند	',
+                employee: 'کارمند بخش عمومی در مدیریت آی تی',
+                image: 'http://www.tabassum-whc.org/wp-content/uploads/2019/03/IMG_3396.jpg',
+            },
+        ]
+        $(document).ready(function () {
+            showDrivers()
+        });
+
+        function showDrivers() {
+            drivers.forEach((driver) => {
+                $("#driversTableBody").append(`<tr> <td colspan="3"><img src="${driver.image}" alt=""  width='100' height='100' /></td> <td colspan="1">${driver.name}</td> <td colspan="1">${driver.employee}</td> <td colspan="1">${driver.job}</td> <td colspan="1">${driver.phoneNumber}</td> <td colspan="1">${driver.activity}</td> <td colspan="2"><img src="${driver.explanation}" alt=""  width='100' height='100' /></td> <td colspan="1" class="btn-group-vertical"> <button type="button" class="btn hover-element-info background-lightblue"> ویرایش <i class="fa fa-edit"></i> </button> <button type="button" class="btn hover-element-info background-lightblue"> حذف <i class="fa fa-trash"></i> </button> </td> </tr>`)
+            });
+        }
+
+        function driverSearchFunction() {
+            var searchText = $("#driverSearchInput").val().toLowerCase();
+            // Show only matching TR, hide rest of them
+            $.each($("#driversTableBody tr"), function () {
+                console.log(" this is:", this)
+                if ($(this).text().toLowerCase().indexOf(searchText) === -1)
+                    $(this).hide();
+                else
+                    $(this).show();
+            });
+        }
+    </script>
+}
+
+

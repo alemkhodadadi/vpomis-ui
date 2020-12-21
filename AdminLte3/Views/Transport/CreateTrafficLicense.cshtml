@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewData["Title"] = "ثبت کارت موتر";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="content transport-content">
+    <div class="card">
+        <div class="card-header card-indigo card-outline fixed flex-end">
+            <div class="padding-05rem float-left" style="width: 100%; border-bottom: 1px solid #d1cccc">
+                <div class="btn-group float-left">
+                    <a class="btn btn-md hover-element-info" href="#">
+                        @*@Lang["Save"]*@
+                        ذخیره
+                        <i class="fa fa-save"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <form id="carForm" class="col-lg-12" role="form">
+                    <div class="row">
+                        <div class="form-group col-md-6 input-select-parent">
+                            <label>راننده</label>
+                            <select name="reviewerId" class="reviewer-select form-control select2-searchable" data-tags="true">
+                                <option />
+                                <option data-tokens="saleh">صالح باقری</option>
+                                <option data-tokens="ali">علی مظفری</option>
+                                <option data-tokens="ramezan">رمضان رحیمی</option>
+                                <option data-tokens="mostafa">مصطفی رحیمی</option>
+                                <option data-tokens="naderi">نادری</option>
+                                <option data-tokens="hossain">حسین عباسی</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6 input-select-parent">
+                            <label>کارمند</label>
+                            <select name="reviewerId" class="reviewer-select form-control select2-searchable" data-tags="true">
+                                <option />
+                                <option data-tokens="saleh">صالح باقری</option>
+                                <option data-tokens="ali">علی مظفری</option>
+                                <option data-tokens="ramezan">رمضان رحیمی</option>
+                                <option data-tokens="mostafa">مصطفی رحیمی</option>
+                                <option data-tokens="naderi">نادری</option>
+                                <option data-tokens="hossain">حسین عباسی</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6 input-select-parent">
+                            <label>موتر</label>
+                            <select name="reviewerId" class="reviewer-select form-control select2-searchable" data-tags="true">
+                                <option />
+                                <option data-tokens="saleh">صالح باقری</option>
+                                <option data-tokens="ali">علی مظفری</option>
+                                <option data-tokens="ramezan">رمضان رحیمی</option>
+                                <option data-tokens="mostafa">مصطفی رحیمی</option>
+                                <option data-tokens="naderi">نادری</option>
+                                <option data-tokens="hossain">حسین عباسی</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>شماره ثبت</label>
+                            <input class="form-control" autocomplete="off" placeholder="وظیفه را وارد کنید" />
+                        </div>
+                        <div class="form-group col-md-6 input-select-parent">
+                            <label>نوع لسانس</label>
+                            <select name="reviewerId" class="form-control" data-tags="true">
+                                <option data-tokens="A">A</option>
+                                <option data-tokens="B">B</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>تاریخ صدور</label>
+                            <input type="text" class="form-control datepicker-null-fa">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>تاریخ انقضاء</label>
+                            <input type="text" class="form-control datepicker-null-fa">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
+
+}
+
+

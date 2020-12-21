@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "twitter-bootstrap@4.3.1",
+      "destination": "wwwroot/lib/bootstrap"
+    },
+    {
+      "library": "select2@4.0.10",
+      "destination": "wwwroot/lib/select2/"
+    },
+    {
+      "library": "jquery@3.4.1",
+      "destination": "wwwroot/lib/jquery/"
+    },
+    {
+      "library": "font-awesome@5.10.2",
+      "destination": "wwwroot/lib/font-awesome/"
+    },
+    {
+      "library": "overlayscrollbars@1.9.1",
+      "destination": "wwwroot/lib/overlayscrollbars/"
+    },
+    {
+      "library": "fullcalendar@4.2.0",
+      "destination": "wwwroot/lib/fullcalendar/"
+    },
+    {
+      "library": "moment.js@2.24.0",
+      "destination": "wwwroot/lib/moment.js/"
+    },
+    {
+      "library": "Chart.js@2.9.3",
+      "destination": "wwwroot/lib/Chart.js/"
+    }
+  ]
+}

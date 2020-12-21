@@ -1,0 +1,611 @@
+﻿@{
+    ViewData["Title"] = "گزارش ها";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="content transport-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card reports-card">
+                    <div class="card-header card-primary card-outline">
+                        <form method="post" asp-action="FilterResult" asp-controller="Report" asp-area="Petitions">
+                            <div class="row">
+                                <div class="form-group col-md-3">
+                                    <label>گزارش های آمریت</label>
+                                    <select class="form-control select2-searchable">
+                                        <option value="">لطفا یک گزینه را انتخاب کنید</option>
+                                        <option value="">آمریت آی تی</option>
+                                        <option value="">آمریت حقوقی</option>
+                                        <option value="">آمریت اداری</option>
+                                        <option value="">آمریت پالیسی</option>
+                                        <option value="">آمریت خدمات</option>
+                                    </select>
+                                    <span class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>گزارش های کارمند</label>
+                                    <select class="form-control select2-searchable">
+                                        <option value="">لطفا یک گزینه را انتخاب کنید</option>
+                                        <option value="">عالم خدادادی</option>
+                                        <option value="">صالح باقری</option>
+                                        <option value="">علی مظفری</option>
+                                        <option value="">رمضان رحیمی</option>
+                                        <option value="">حسین عباسی</option>
+                                    </select>
+                                    <span class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>نوع گزارش</label>
+                                    <select class="form-control select2-searchable">
+                                        <option value="">نوع زمانی گزارش</option>
+                                        <option value="">ماهانه</option>
+                                        <option value="">ربعوار</option>
+                                        <option value="">سالانه</option>
+                                    </select>
+                                    <span class="text-danger"></span>
+                                </div>
+                                @*<div class="form-group col-md-2">
+                                        <label>تا تاریخ:</label>
+                                        <input class="form-control datepicker-null-en" autocomplete="off" type="text" />
+                                        <span class="text-danger"></span>
+                                    </div>*@
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label style="color: transparent">d</label>
+                                        <button type="submit" id="btnSearch" class="btn btn-block btn-primary form-control"><i class="fa fa-print"></i> چاپ گزارش</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-body reports-card-body">
+                        <div class="row" style="height: 100%">
+                            <div class="col-lg-12 content-parent-manual">
+                                <ul>
+                                    @*<li>
+                                        <div class="reports-item-parent col-md-12">
+                                            <div class="row">
+                                                <div class="col-sm-9 flexed-centerd-horizontal">
+                                                    <span class="list-item-titles">آمریت: پلان و پالیسی </span>
+                                                    <span class="list-item-titles">دسته بندی: شرکت در جلسه بعد از ظهر روز یکشنبه بیست و دوم ماه قوس در مورد صلح با طالبان و نقش منطقه ای و مهم پاکستان و همینطور در مورد جنگ ایران و عراق</span>
+                                                </div>
+                                                <div class="col-sm-3 flexed-left-horizontal">
+                                                    <a class="btn btn-md report-left-side-icons" onclick='openViewTaskModal(${JSON.stringify(todo)})' aria-haspopup="true" aria-expanded="false" href="#">
+                                                        <i class="fa fa-edit"></i>
+                                                    </a>
+                                                    <a class="btn btn-md report-left-side-icons" id="makeDone" onclick='openMakeTaskDoneModal(${JSON.stringify(todo)})' aria-haspopup="true" aria-expanded="false" href="#" href="#">
+                                                        <i class="fa fa-check-circle"></i>
+                                                    </a>
+                                                    <div class="dropdown report-left-side-icons">
+                                                        <a class="btn btn-md dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                                                            <i class="fa fa-ellipsis-h"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                            <a class="dropdown-item" onclick='openDeleteTaskModal(${JSON.stringify(todo)})' href="#">حذف</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>*@
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form id="AddTodoForm" action="/Task/AddTodo" method="post">
+        <div class="modal fade" id="createTaskModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ثبت آیتم جدید</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="row">
+                                <label for="Title" class="col-sm-3 col-form-label">عنوان:</label>
+                                <input type="text" id="taskTitle" class="col-sm-7 form-control" name="Title">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label for="staticEmail" class="col-sm-3 col-form-label">نوع آیتم: </label>
+                                <div class="col-sm-7 none-padding-button">
+                                    <a class=" btn-md dropdown-toggle todoType-dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <input type="text" class="form-control input-sm cursor-pointer todoTypeInputToDisplay" placeholder="نوع آیتم" readonly>
+                                        <input type="hidden" class="todoTypeInputRealValue" name="TodoType">
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-task-status">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row" id="urgentParent">
+                            <label for="IsUrgent" class="col-sm-4 col-form-label">اضطرار: </label>
+                            <label class="switch">
+                                <input type="checkbox" class="primary isUrgent" name="IsUrgent">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="form-group row" id="reminderParent">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">یادآوری: </label>
+                            <label class="switch">
+                                <input type="checkbox" class="primary hasReminder" name="HasReminder">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="form-group row sub-item reminderChild" style="display: none;">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">زمان یادآوری: </label>
+                            <div class="col-sm-8">
+                                <input type="datetime-local" class="form-control" id="reminderTime" name="ReminderTime">
+                            </div>
+                        </div>
+                        <div class="form-group row" id="explanationParent">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">توضیحات: </label>
+                            <label class="switch">
+                                <input type="checkbox" class="primary hasExplanation" name="HasExplanation">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="form-group row sub-item explanationChild" style="display: none;">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">ثبت توضیحات: </label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" id="todoExplanationText" placeholder="توضیحات ..." name="Explanation"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"> انصراف <i class="fa fa-trash"></i></button>
+                        <button type="submit" class="btn btn-secondary">ثبت آیتم <i class="fa fa-check"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form id="EditTodoForm" action="/Task/EditTodo" method="post">
+        <div class="modal fade" id="editTaskModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ویرایش آیتم</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" name="TodoID" id="TodoID" />
+                        <div class="form-group">
+                            <div class="row">
+                                <label for="Title" class="col-sm-3 col-form-label">عنوان:</label>
+                                <input type="text" id="taskTitle" class="col-sm-7 form-control" name="Title">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label for="staticEmail" class="col-sm-3 col-form-label">نوع آیتم: </label>
+                                <div class="col-sm-7 none-padding-button">
+                                    <a class=" btn-md dropdown-toggle todoType-dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <input type="text" class="form-control input-sm cursor-pointer todoTypeInputToDisplay" placeholder="نوع آیتم" readonly>
+                                        <input type="hidden" class="todoTypeInputRealValue" name="TodoType">
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-task-status">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row" id="urgentParent">
+                            <label for="IsUrgent" class="col-sm-4 col-form-label">اضطرار: </label>
+                            <label class="switch">
+                                <input type="checkbox" class="primary isUrgent" name="IsUrgent">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="form-group row" id="reminderParent">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">یادآوری: </label>
+                            <label class="switch">
+                                <input type="checkbox" class="primary hasReminder" name="HasReminder">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="form-group row sub-item reminderChild" style="display: none;">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">زمان یادآوری: </label>
+                            <div class="col-sm-8">
+                                <input type="datetime-local" class="form-control" id="reminderTime" name="ReminderTime">
+                            </div>
+                        </div>
+                        <div class="form-group row" id="explanationParent">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">توضیحات: </label>
+                            <label class="switch">
+                                <input type="checkbox" class="primary hasExplanation" name="HasExplanation">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="form-group row sub-item explanationChild" style="display: none;">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">ثبت توضیحات: </label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" id="todoExplanationText" placeholder="توضیحات ..." name="Explanation"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"> انصراف <i class="fa fa-trash"></i></button>
+                        <button type="submit" class="btn btn-secondary">ثبت آیتم <i class="fa fa-check"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form id="DeleteTodoForm" action="/Task/DeleteTodo" method="post">
+        <div class="modal" tabindex="-1" role="dialog" id="deleteTaskModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" name="TodoID" id="TodoID" />
+                        <p>آیا این آیتم حذف شود؟</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"> انصراف <i class="fa fa-trash"></i></button>
+                        <button type="submit" class="btn btn-secondary"> حذف <i class="fa fa-check"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form id="MakeTodoDoneForm" action="/Task/ChangeTodoStatus" method="post">
+        <div class="modal" tabindex="-1" role="dialog" id="MakeTaskDoneModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" name="TodoID" id="TodoID" />
+                        <p>آیا این آیتم انجام شده است؟</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"> خیر <i class="fa fa-trash"></i></button>
+                        <button type="submit" class="btn btn-secondary"> بله <i class="fa fa-check"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section scripts
+{
+    <script src="~/lib/Chart.js/Chart.min.js"></script>
+    <script src="~/lib/Chart.js/chartjs-plugin-datalabels.js"></script>
+
+    @*<script>
+            var defaults = {
+                global: {
+                    // example font
+                    defaultFontFamily: 'IRANSans'
+                }
+            };
+            var areaChartData = {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [
+                    {
+                        label: 'Digital Goods',
+                        backgroundColor: 'rgba(60,141,188,0.9)',
+                        borderColor: 'rgba(60,141,188,0.8)',
+                        pointRadius: false,
+                        pointColor: '#3b8bba',
+                        pointStrokeColor: 'rgba(60,141,188,1)',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(60,141,188,1)',
+                        data: [28, 48, 40, 19, 86, 27, 90]
+                    },
+                    {
+                        label: 'Electronics',
+                        backgroundColor: 'rgba(210, 214, 222, 1)',
+                        borderColor: 'rgba(210, 214, 222, 1)',
+                        pointRadius: false,
+                        pointColor: 'rgba(210, 214, 222, 1)',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(220,220,220,1)',
+                        data: [65, 59, 80, 81, 56, 55, 40]
+                    },
+                ]
+            }
+
+            var barChart2Data = {
+                labels: ['حمل', 'ثور', 'جوزا', 'سرطان', 'اسد', 'سنبله', 'میزان', 'عقرب', 'قوس', 'جدی', 'دلو', 'حوت'],
+                datasets: [
+                    {
+                        label: 'تعداد کارمندان',
+                        backgroundColor: '#f56954',
+                        borderColor: '#f56954',
+                        pointRadius: false,
+                        pointColor: '#3b8bba',
+                        pointStrokeColor: '#f56954',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: '#f56954',
+                        data: [28, 48, 40, 19, 86, 27, 90, 40, 19, 86, 27, 90]
+                    },
+                    {
+                        label: 'حضور',
+                        backgroundColor: '#00a65a',
+                        borderColor: '#00a65a',
+                        pointRadius: false,
+                        pointColor: '#00a65a',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: '#00a65a',
+                        data: [65, 59, 80, 81, 56, 55, 40, 80, 81, 56, 55, 40]
+                    },
+                ]
+            }
+
+            var donutData = {
+                labels: [
+                    'Chrome',
+                    'IE',
+                    'FireFox',
+                    'Safari',
+                    'Opera',
+                    'Navigator',
+                ],
+                datasets: [
+                    {
+                        data: [700, 500, 400, 600, 300, 100],
+                        backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+                    }
+                ]
+            }
+
+            //-------------
+            //- PIE CHART -
+            //-------------
+            // Get context with jQuery - using jQuery's .get() method.
+            var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+            var pieData = donutData;
+            var pieOptions = {
+                maintainAspectRatio: false,
+                responsive: true,
+            }
+            //Create pie or douhnut chart
+            // You can switch between pie and douhnut using the method below.
+            var pieChart = new Chart(pieChartCanvas, {
+                type: 'pie',
+                data: pieData,
+                options: pieOptions
+            })
+
+            //-------------
+            //- BAR CHART -
+            //-------------
+            var barChartCanvas = $('#barChart').get(0).getContext('2d')
+            var barChartData = jQuery.extend(true, {}, areaChartData)
+            var temp0 = areaChartData.datasets[0]
+            var temp1 = areaChartData.datasets[1]
+            barChartData.datasets[0] = temp1
+            barChartData.datasets[1] = temp0
+
+            var barChartOptions = {
+                responsive: true,
+                legend: {
+                    //reverse: true,
+                    //rtl: true,
+                    //textDirection: 'rtl',
+                },
+                maintainAspectRatio: false,
+                datasetFill: false
+            }
+
+            var barChart = new Chart(barChartCanvas, {
+                type: 'bar',
+                data: barChartData,
+                options: barChartOptions
+            })
+
+
+            //-------------
+            //- BAR CHART -
+            //-------------
+            var barChart2Canvas = $('#barChart2').get(0).getContext('2d')
+
+
+            var barChart2Options = {
+                responsive: true,
+                plugins: {
+                    // Change options for ALL labels of THIS CHART
+                    datalabels: {
+                        color: '#fff',
+                        anchor: 'center',
+                        align: 'right',
+                        clamp: true,
+                    }
+                },
+                legend: {
+                    display: true,
+                    labels: {
+                        fontFamily: 'IRANSans'
+                    },
+                    reverse: true,
+                    rtl: true,
+                    textDirection: 'rtl'
+                },
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            reverse: true,
+                            fontFamily: "IRANSans",
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        position: 'right',
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                },
+                tooltips: {
+                    titleFontFamily: 'IRANSans',
+                    titleAlign: 'right',
+                    bodyAlign: 'right',
+                    bodyFontFamily: 'IRANSans'
+                },
+                maintainAspectRatio: false,
+                datasetFill: false
+            }
+
+            var barChart2 = new Chart(barChart2Canvas, {
+                type: 'bar',
+                plugins: [{
+                    ChartDataLabels
+                }],
+                data: barChart2Data,
+                options: barChart2Options,
+                defaults: defaults
+            })
+        </script>*@
+
+    <script>
+        var defaults = {
+            global: {
+                // example font
+                defaultFontFamily: 'IRANSans'
+            }
+        };
+
+        /////////
+        var daysInMonth = [];
+        var petitionNumbers = [];
+        var petResult;
+
+        function showChart() {
+            daysInMonth = petResult.days;
+            petitionNumbers = petResult.pets;
+            console.log(daysInMonth);
+            console.log(petitionNumbers);
+
+            let popCanvasName = $('#barChart').get(0).getContext('2d');
+
+            var barChartData = {
+                labels: daysInMonth,
+                datasets: [
+                    {
+                        label: 'تعداد عریضه‌های روزانه',
+                        backgroundColor: '#f56954',
+                        borderColor: '#f56954',
+                        pointRadius: false,
+                        pointColor: '#3b8bba',
+                        pointStrokeColor: '#f56954',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: '#f56954',
+                        data: petitionNumbers
+                    }
+                ]
+            }
+
+            var barChartOptions = {
+                responsive: true,
+                plugins: {
+                    // Change options for ALL labels of THIS CHART
+                    datalabels: {
+                        color: '#fff',
+                        anchor: 'center',
+                        align: 'right',
+                        clamp: true,
+                    }
+                },
+                legend: {
+                    display: true,
+                    labels: {
+                        fontFamily: 'IRANSans'
+                    },
+                    reverse: true,
+                    rtl: true,
+                    textDirection: 'rtl'
+                },
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            reverse: true,
+                            fontFamily: "IRANSans",
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        position: 'right',
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                },
+                tooltips: {
+                    titleFontFamily: 'IRANSans',
+                    titleAlign: 'right',
+                    bodyAlign: 'right',
+                    bodyFontFamily: 'IRANSans'
+                },
+                maintainAspectRatio: false,
+                datasetFill: false
+            }
+
+            var barChartName = new Chart(popCanvasName, {
+                type: 'bar',
+                plugins: [{
+                    ChartDataLabels
+                }],
+                data: barChartData,
+                options: barChartOptions,
+                defaults: defaults
+            });
+        }
+        function getChartData() {
+            return fetch('/Petitions/Report/DailyPetitions',
+                {
+                    method: 'get',
+                    headers: {
+                        'Content-Type': 'application/json;charset=UTF-8'
+                    }
+                })
+                .then(function (response) {
+                    if (response.ok) {
+                        return response.text();
+                    } else {
+                        throw Error('Response Not OK');
+                    }
+                })
+                .then(function (text) {
+                    try {
+                        return JSON.parse(text);
+                    } catch (err) {
+                        throw Error('Method Not Found');
+                    }
+                })
+                .then(function (responseJSON) {
+                    petResult = responseJSON;
+                    showChart();
+                })
+        }
+            //getChartData();
+    </script>
+}
+

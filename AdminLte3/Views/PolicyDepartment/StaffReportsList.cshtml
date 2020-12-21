@@ -1,0 +1,532 @@
+﻿@{
+    ViewData["Title"] = "تاریخچه گزارش های روح الله نادری";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="content transport-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card reports-card">
+                    @*<div class="card-header fixed card-primary card-outline">
+                        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                            <li class="nav-item float-left ml-auto" style="margin-left: 10px">
+                                <div class="input-group">
+                                    <input type="text" id="carSearchInput" name="query" class="form-control">
+                                    <span class="input-group-append">
+                                        <button class="btn btn-info" onclick="carSearchFunction()">
+                                            <i class="fa fa-search"></i>
+                                            جستجو
+                                        </button>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>*@
+                    <div class="card-body p-0 table-responsive">
+                        <table id="generalTable" class="table table-condensed doc-table">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">کارمند</th>
+                                    <th colspan="2">آمریت</th>
+                                    <th colspan="2">نوع زمانی گزارش </th>
+                                    <th colspan="2">بازه زمانی گزارش</th>
+                                    <th colspan="2">تاریخ ثبت گزارش</th>
+                                    <th colspan="2">اعمال</th>
+                                </tr>
+                            </thead>
+                            <tbody id="generalTableBody">
+                                <tr>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> روح الله نادری </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> تنظیم امور کمیته ها </span>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> سه ماهه </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> میزان، عقرب، قوس </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> 02/08/1399در انتظار تایید </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <div class="btn-group flexed-left-horizontal">
+                                            <a type="button" class="btn hover-element-info background-lightblue" href="#" data-toggle="modal" data-target="#ConfirmSingleReportModal">
+                                                مشاهده
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                            <a type="button" class="btn hover-element-info background-lightblue" href="#" data-toggle="modal" data-target="#DeleteSingleReportModal">
+                                                چاپ
+                                                <i class="fa fa-print"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> روح الله نادری </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> تنظیم امور کمیته ها </span>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> سه ماهه </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> میزان، عقرب، قوس </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> 02/08/1399در انتظار تایید </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <div class="btn-group flexed-left-horizontal">
+                                            <a type="button" class="btn hover-element-info background-lightblue" href="#" data-toggle="modal" data-target="#ConfirmSingleReportModal">
+                                                مشاهده
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                            <a type="button" class="btn hover-element-info background-lightblue" href="#" data-toggle="modal" data-target="#DeleteSingleReportModal">
+                                                چاپ
+                                                <i class="fa fa-print"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> روح الله نادری </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> تنظیم امور کمیته ها </span>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> سه ماهه </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> میزان، عقرب، قوس </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> 02/08/1399در انتظار تایید </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <div class="btn-group flexed-left-horizontal">
+                                            <a type="button" class="btn hover-element-info background-lightblue" href="#" data-toggle="modal" data-target="#ConfirmSingleReportModal">
+                                                مشاهده
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                            <a type="button" class="btn hover-element-info background-lightblue" href="#" data-toggle="modal" data-target="#DeleteSingleReportModal">
+                                                چاپ
+                                                <i class="fa fa-print"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> روح الله نادری </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> تنظیم امور کمیته ها </span>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> سه ماهه </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> میزان، عقرب، قوس </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> 02/08/1399در انتظار تایید </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <div class="btn-group flexed-left-horizontal">
+                                            <a type="button" class="btn hover-element-info background-lightblue" href="#" data-toggle="modal" data-target="#ConfirmSingleReportModal">
+                                                مشاهده
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                            <a type="button" class="btn hover-element-info background-lightblue" href="#" data-toggle="modal" data-target="#DeleteSingleReportModal">
+                                                چاپ
+                                                <i class="fa fa-print"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> روح الله نادری </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> تنظیم امور کمیته ها </span>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> سه ماهه </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> میزان، عقرب، قوس </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> 02/08/1399در انتظار تایید </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <div class="btn-group flexed-left-horizontal">
+                                            <a type="button" class="btn hover-element-info background-lightblue" href="#" data-toggle="modal" data-target="#ConfirmSingleReportModal">
+                                                مشاهده
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                            <a type="button" class="btn hover-element-info background-lightblue" href="#" data-toggle="modal" data-target="#DeleteSingleReportModal">
+                                                چاپ
+                                                <i class="fa fa-print"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> روح الله نادری </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> تنظیم امور کمیته ها </span>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> سه ماهه </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> میزان، عقرب، قوس </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <span class="list-item-titles"> 02/08/1399در انتظار تایید </span>
+                                    </td>
+                                    <td colspan="2">
+                                        <div class="btn-group flexed-left-horizontal">
+                                            <a type="button" class="btn hover-element-info background-lightblue" href="#" data-toggle="modal" data-target="#ConfirmSingleReportModal">
+                                                مشاهده
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                            <a type="button" class="btn hover-element-info background-lightblue" href="#" data-toggle="modal" data-target="#DeleteSingleReportModal">
+                                                چاپ
+                                                <i class="fa fa-print"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form id="createOfficeReportForm" action="/Task/AddTodo" method="post">
+        <div class="modal fade" id="createOfficeReportModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ایجاد گزارش جدید</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="row">
+                                <label for="staticEmail" class="col-sm-3 col-form-label">نوع گزارش: </label>
+                                <div class="col-sm-7 none-padding-button">
+                                    <a class=" btn-md dropdown-toggle todoType-dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <input type="text" class="form-control input-sm cursor-pointer todoTypeInputToDisplay" placeholder="نوع گزارش" readonly>
+                                        <input type="hidden" class="todoTypeInputRealValue" name="TodoType">
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-report-status">
+                                        <a class="dropdown-item" id="1" href="#">کارمندی</a>
+                                        <a class="dropdown-item" id="1" href="#">آمریت</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label for="staticEmail" class="col-sm-3 col-form-label">کارمند: </label>
+                                <div class="col-sm-7 none-padding-button">
+                                    <a class=" btn-md dropdown-toggle todoType-dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <input type="text" class="form-control input-sm cursor-pointer todoTypeInputToDisplay" placeholder="انتخاب کارمند" readonly>
+                                        <input type="hidden" class="todoTypeInputRealValue" name="TodoType">
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-report-status">
+                                        <a class="dropdown-item" id="1" href="#">علی مظفری</a>
+                                        <a class="dropdown-item" id="1" href="#">صالح باقری</a>
+                                        <a class="dropdown-item" id="1" href="#">رمضان رحیمی</a>
+                                        <a class="dropdown-item" id="1" href="#">حسین عباسی</a>
+                                        <a class="dropdown-item" id="1" href="#">مصطفی رحیمی</a>
+                                        <a class="dropdown-item" id="1" href="#">روح الله نادری</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label for="staticEmail" class="col-sm-3 col-form-label">زمان گزارش: </label>
+                                <div class="col-sm-7 none-padding-button">
+                                    <a class=" btn-md dropdown-toggle todoType-dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <input type="text" class="form-control input-sm cursor-pointer todoTypeInputToDisplay" placeholder="انتخاب زمان گزارش" readonly>
+                                        <input type="hidden" class="todoTypeInputRealValue" name="TodoType">
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-report-status">
+                                        <a class="dropdown-item" id="1" href="#">ماهانه</a>
+                                        <a class="dropdown-item" id="1" href="#">سالانه</a>
+                                        <a class="dropdown-item" id="1" href="#">براساس تاریخ</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label for="staticEmail" class="col-sm-3 col-form-label">انتخاب ماه: </label>
+                                <div class="col-sm-7 none-padding-button">
+                                    <a class=" btn-md dropdown-toggle todoType-dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <input type="text" class="form-control input-sm cursor-pointer todoTypeInputToDisplay" placeholder="ماه گزارش" readonly>
+                                        <input type="hidden" class="todoTypeInputRealValue" name="TodoType">
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-report-status">
+                                        <a class="dropdown-item" id="1" href="#">حمل</a>
+                                        <a class="dropdown-item" id="1" href="#">ثور</a>
+                                        <a class="dropdown-item" id="1" href="#">جوزا</a>
+                                        <a class="dropdown-item" id="1" href="#">سرطان</a>
+                                        <a class="dropdown-item" id="1" href="#">اسد</a>
+                                        <a class="dropdown-item" id="1" href="#">سنبله</a>
+                                        <a class="dropdown-item" id="1" href="#">میزان</a>
+                                        <a class="dropdown-item" id="1" href="#">عقرب</a>
+                                        <a class="dropdown-item" id="1" href="#">قوس</a>
+                                        <a class="dropdown-item" id="1" href="#">جدی</a>
+                                        <a class="dropdown-item" id="1" href="#">دلو</a>
+                                        <a class="dropdown-item" id="1" href="#">حوت</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label for="staticEmail" class="col-sm-3 col-form-label">انتخاب سال: </label>
+                                <div class="col-sm-7 none-padding-button">
+                                    <a class=" btn-md dropdown-toggle todoType-dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <input type="text" class="form-control input-sm cursor-pointer todoTypeInputToDisplay" placeholder="سال مالی گزارش" readonly>
+                                        <input type="hidden" class="todoTypeInputRealValue" name="TodoType">
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-report-status">
+                                        <a class="dropdown-item" id="1" href="#">سال مالی 1398-1399</a>
+                                        <a class="dropdown-item" id="1" href="#">سال مالی 1399-1400</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label for="staticEmail" class="col-sm-3 col-form-label">انتخاب بازه تاریخی: </label>
+                                <div class="col-sm-7 none-padding-button">
+                                    <div class="row">
+                                        <label for="staticEmail" class="col-sm-4 col-form-label">از تاریخ: </label>
+                                        <input type="datetime-local" id="taskTitle" class="col-sm-8 form-control" name="Title">
+                                    </div>
+                                    <div class="row">
+                                        <label for="staticEmail" class="col-sm-4 col-form-label">تا تاریخ: </label>
+                                        <input type="datetime-local" id="taskTitle" class="col-sm-8 form-control" name="Title">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"> انصراف <i class="fa fa-trash"></i></button>
+                        <button type="submit" class="btn btn-secondary">مشاهده گزارش <i class="fa fa-eye"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <form id="DeleteReportModal">
+        <div class="modal" tabindex="-1" role="dialog" id="DeleteSingleReportModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" name="TodoID" id="TodoID" />
+                        <p>آیا این آیتم حذف شود؟</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"> انصراف <i class="fa fa-trash"></i></button>
+                        <button type="submit" class="btn btn-secondary"> حذف <i class="fa fa-check"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form id="ConfirmReportForm" action="/Task/ChangeTodoStatus" method="post">
+        <div class="modal" tabindex="-1" role="dialog" id="ConfirmSingleReportModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" name="TodoID" id="TodoID" />
+                        <p>آیا این آیتم تایید شود؟</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"> خیر <i class="fa fa-trash"></i></button>
+                        <button type="submit" class="btn btn-secondary"> بله <i class="fa fa-check"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section scripts
+{
+    <script src="~/lib/Chart.js/Chart.min.js"></script>
+    <script src="~/lib/Chart.js/chartjs-plugin-datalabels.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-menu-task-status a').on('click', function () {
+                $('.todoType-dropdown-toggle .todoTypeInputToDisplay').val($(this).html());
+                $('.todoType-dropdown-toggle .todoTypeInputRealValue').val($(this).attr("id"));
+                selectedStatus = $(this);
+                if (selectedStatus.attr("id") == "1") {
+                    $("#reminderParent, #assignOthersParent").fadeOut(300);
+                } else {
+                    $("#reminderParent, #assignOthersParent").fadeIn(300);
+                }
+            })
+        });
+
+        function openConfirmModal() {
+
+        }
+        var defaults = {
+            global: {
+                // example font
+                defaultFontFamily: 'IRANSans'
+            }
+        };
+
+        /////////
+        var daysInMonth = [];
+        var petitionNumbers = [];
+        var petResult;
+
+        function showChart() {
+            daysInMonth = petResult.days;
+            petitionNumbers = petResult.pets;
+            console.log(daysInMonth);
+            console.log(petitionNumbers);
+
+            let popCanvasName = $('#barChart').get(0).getContext('2d');
+
+            var barChartData = {
+                labels: daysInMonth,
+                datasets: [
+                    {
+                        label: 'تعداد عریضه‌های روزانه',
+                        backgroundColor: '#f56954',
+                        borderColor: '#f56954',
+                        pointRadius: false,
+                        pointColor: '#3b8bba',
+                        pointStrokeColor: '#f56954',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: '#f56954',
+                        data: petitionNumbers
+                    }
+                ]
+            }
+
+            var barChartOptions = {
+                responsive: true,
+                plugins: {
+                    // Change options for ALL labels of THIS CHART
+                    datalabels: {
+                        color: '#fff',
+                        anchor: 'center',
+                        align: 'right',
+                        clamp: true,
+                    }
+                },
+                legend: {
+                    display: true,
+                    labels: {
+                        fontFamily: 'IRANSans'
+                    },
+                    reverse: true,
+                    rtl: true,
+                    textDirection: 'rtl'
+                },
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            reverse: true,
+                            fontFamily: "IRANSans",
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        position: 'right',
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                },
+                tooltips: {
+                    titleFontFamily: 'IRANSans',
+                    titleAlign: 'right',
+                    bodyAlign: 'right',
+                    bodyFontFamily: 'IRANSans'
+                },
+                maintainAspectRatio: false,
+                datasetFill: false
+            }
+
+            var barChartName = new Chart(popCanvasName, {
+                type: 'bar',
+                plugins: [{
+                    ChartDataLabels
+                }],
+                data: barChartData,
+                options: barChartOptions,
+                defaults: defaults
+            });
+        }
+        function getChartData() {
+            return fetch('/Petitions/Report/DailyPetitions',
+                {
+                    method: 'get',
+                    headers: {
+                        'Content-Type': 'application/json;charset=UTF-8'
+                    }
+                })
+                .then(function (response) {
+                    if (response.ok) {
+                        return response.text();
+                    } else {
+                        throw Error('Response Not OK');
+                    }
+                })
+                .then(function (text) {
+                    try {
+                        return JSON.parse(text);
+                    } catch (err) {
+                        throw Error('Method Not Found');
+                    }
+                })
+                .then(function (responseJSON) {
+                    petResult = responseJSON;
+                    showChart();
+                })
+        }
+                //getChartData();
+    </script>
+}
+

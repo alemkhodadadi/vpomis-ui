@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewData["Title"] = "گزارش ها";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content transport-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header fixed card-primary card-outline">
+                        <form method="post" asp-action="FilterResult" asp-controller="Report" asp-area="Petitions">
+                            <div class="row">
+                                <div class="form-group col-md-3">
+                                    <label>اداره گزارش دهنده</label>
+                                    <select class="form-control select2-searchable">
+                                        <option value="">لطفا یک گزینه را انتخاب کنید</option>
+                                        <option value="">آمریت آی تی</option>
+                                        <option value="">آمریت حقوقی</option>
+                                        <option value="">آمریت اداری</option>
+                                        <option value="">آمریت پالیسی</option>
+                                        <option value="">آمریت خدمات</option>
+                                    </select>
+                                    <span class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>کارمند گزارش دهنده</label>
+                                    <select class="form-control select2-searchable">
+                                        <option value="">لطفا یک گزینه را انتخاب کنید</option>
+                                        <option value="">عالم خدادادی</option>
+                                        <option value="">صالح باقری</option>
+                                        <option value="">علی مظفری</option>
+                                        <option value="">رمضان رحیمی</option>
+                                        <option value="">حسین عباسی</option>
+                                    </select>
+                                    <span class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>از تاریخ:</label>
+                                    <input class="form-control datepicker-null-en" autocomplete="off" type="text" />
+                                    <span class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>تا تاریخ:</label>
+                                    <input class="form-control datepicker-null-en" autocomplete="off" type="text" />
+                                    <span class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-sm-12 col-md-6 offset-md-6">
+                                    <button type="submit" id="btnSearch" class="btn btn-block btn-primary"><i class="fa fa-filter"></i> فیلتر</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <form asp-action="Create" asp-controller="Admin" method="post">
+                    <div class="modal fade" id="deleteCarModal" tabindex="-1" role="dialog" aria-labelledby="addPetitionModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">حذف موتر</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group row">
+                                        <span class="modal-body-text">آیا از حذف موتر مطمین هستید؟</span>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary" data-dismiss="modal" onclick="deleteCar()"><i class="fa fa-folder-plus"></i></button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+   
+</div>

@@ -1,0 +1,387 @@
+﻿
+@{
+    ViewData["Title"] = "ثبت کارت موتر";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="content transport-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header fixed card-primary card-outline">
+                        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link bg-dark" asp-action="CreateTrafficLicense" asp-controller="Transport"><i class="fa fa-folder-plus"></i> ثبت کارت جدید</a>
+                            </li>
+                            <li class="nav-item float-left ml-auto">
+                                <div class="input-group">
+                                    <input type="text" id="licensesSearchInput" name="query" class="form-control">
+                                    <span class="input-group-append">
+                                        <button class="btn btn-info" onclick="licensesSearchFunction()">
+                                            <i class="fa fa-search"></i>
+                                            جستجو
+                                        </button>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card-body p-0 table-responsive">
+                        <table id="licencesTable" class="table table-condensed doc-table">
+                            <thead class="fixed">
+                                <tr>
+                                    <th colspan="2">راننده</th>
+                                    <th colspan="3">موتر</th>
+                                    <th colspan="1">شماره ثبت</th>
+                                    <th colspan="1">نوع لسانس</th>
+                                    <th colspan="1">تاریخ صدور</th>
+                                    <th colspan="1">تاریخ انقضاء</th>
+                                    <th colspan="1">ملاحظات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="licencesTableBody">
+                                <tr>
+                                    <td colspan="2">صالح باقری</td>
+                                    <td colspan="3">تیوتا لند کروزر 2017 سفید نمبر پلیت : 13749	</td>
+                                    <td colspan="1">01</td>
+                                    <td colspan="1">A</td>
+                                    <td colspan="1">1399/5/26</td>
+                                    <td colspan="1">1399/10/1</td>
+                                    <td colspan="1">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn hover-element-info background-lightblue">
+                                                ویرایش
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <a type="button" class="btn hover-element-info background-lightblue" asp-action="Print" asp-controller="Transport">
+                                                مشاهده
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                            <button type="button" class="btn hover-element-info background-lightblue" data-toggle="modal" data-target="#deleteTransportCardModal">
+                                                حذف
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <form>
+                    <div class="modal fade" id="deleteTransportCardModal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">حذف کارت موتر</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+
+                                    </button>
+                                </div> <div class="modal-body">
+                                    <div class="form-group row">
+                                        <span class="modal-body-text">آیا از حذف کارت موتر مطمین هستید؟</span>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary" data-dismiss="modal" onclick="deleteTransportCard()"><i class="fa fa-folder-plus"></i> حذف</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> انصراف</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="modal fade" id="viewTransportCardModal" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body" id="viewTransportCardModalContent">
+                                        <img id="viewTransportCardModalFlag" src="https://www.flagpictures.org/downloads/print/afghanistan1.svg" alt="" width='100' height='100' />
+                                        <div class="row">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary" data-dismiss="modal" onclick="deleteTransportCard()"><i class="fa fa-folder-plus"></i> حذف</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> @Lang["Cancel"]</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                    <div class="modal fade" id="viewTransportCardModal" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    @*<img id="viewTransportCardModalFlag" src="https://www.flagpictures.org/downloads/print/afghanistan1.svg" alt="" width='100' height='100' />*@
+                                    <section id="kart">
+                                        <img src="http://edge.vpo.gov.af/assets/img/resources/vehicle-kart-background.png" alt="Vehicle kart" id="img-background">
+                                        <div class="top-row">
+                                            <div class="col-sm-12">
+
+                                                <div class="kart-vpo-logo vpo-right">
+                                                    <img src="http://edge.vpo.gov.af/assets/img/resources/logo_vpo.png" class="vpo-logo" alt="VPO Logo">
+                                                    <br>
+                                                    <br>
+                                                    <span class="kart-register">
+                                                        شماره ثبت (......)
+                                                    </span>
+                                                    <br>
+                                                    <br>
+                                                </div>
+                                                <div class="kart-title">
+                                                    <br>
+                                                    <br>
+                                                    <span class="kart-title-af">جمهوری اسلامی افغانستان</span>
+                                                    <br>
+                                                    <span class="kart-title-vpo">معاونت دوم ریاست جمهوری</span>
+                                                    <br>
+                                                    <span class="kart-title-chief">ریاست عمومی دفتر</span>
+                                                    <br>
+                                                    <br>
+
+                                                    <span class="kart-title-sedarat">کارت وسایط صدارت عظمی</span>
+
+                                                </div>
+                                                <div class="kart-driver-photo vpo-left">
+                                                    <img src="http://edge.vpo.gov.af/uploads/drivers/1597561597.png" class="driver-photo" alt="Driver Photo">
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class=" bottom-row">
+
+                                            <div class="row">
+                                                <div class="col-sm-12 col-lg-12 col-md-12">
+                                                    <div class="kart-lycense">
+                                                        <br>
+                                                        <img src="http://edge.vpo.gov.af/assets/img/resources/A-400.png" class="licence_type" alt="A-400.png">
+
+                                                    </div>
+                                                    <div class="vehicle-image">
+                                                        <div class="row kart-sign">
+                                                            <div class="chief">
+                                                                <span class="chief-name">امان الله فصیحی</span>
+                                                                <br>
+                                                                <span class="chief-job">رئیس عمومی دفتر معاونت دوم ریاست جمهوری</span>
+                                                                <br>
+                                                                <br>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="row">
+                                                            <div class="col-sm-12 container">
+                                                                <img src="http://edge.vpo.gov.af/uploads/vehicles/1597561430.png" class="vehicle-photo" alt="Vehicle Photo">
+
+                                                                <div class="driver-vehicle">
+                                                                    <div class="col-sm-12 kart-font">
+
+
+                                                                        <div class="vehicle-driver-title">
+                                                                            <span class="vehicle-right">نام و تخلص  :</span>
+                                                                        </div>
+                                                                        <div class="vehicle-driver-detail ">
+                                                                            <span class="vehicle-left">
+                                                                                داوود میرزایی
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-12 kart-font">
+
+                                                                        <div class="vehicle-driver-title">
+                                                                            <span class="vehicle-right">وظیفه : </span>
+                                                                        </div>
+                                                                        <div class="vehicle-driver-detail ">
+                                                                            <span class="vehicle-left">مشاور امور انرژی و آب</span>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-sm-12 kart-font">
+
+                                                                        <div class="vehicle-driver-title ">
+                                                                            <span class="vehicle-right">نوع و رنگ واسطه:</span>
+                                                                        </div>
+                                                                        <div class="vehicle-driver-detail ">
+                                                                            <span class="vehicle-left">کرولا 2007 سفید</span>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-sm-12 kart-font">
+
+                                                                        <div class="vehicle-driver-title ">
+                                                                            <span class="vehicle-right">شماره پلیت : </span>
+                                                                        </div>
+                                                                        <div class="vehicle-driver-detail ">
+                                                                            <span class="vehicle-left">68999-2</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-12 kart-font">
+
+                                                                        <div class="vehicle-driver-title ">
+                                                                            <span class="vehicle-right">شماره انجن : </span>
+                                                                        </div>
+                                                                        <div class="vehicle-driver-detail ">
+                                                                            <span class="vehicle-left engin-number">3021141</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-12 kart-font">
+
+                                                                        <div class="vehicle-driver-title ">
+                                                                            <span class="vehicle-right">شماره شاسی : </span>
+                                                                        </div>
+                                                                        <div class="vehicle-driver-detail ">
+                                                                            <span class="vehicle-left shasi-number">JTDBS42E909010522</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="col-sm-12 kart-font">
+                                                            <div class="col-sm-7">
+
+                                                            </div>
+                                                            <div class="col-sm-5 vehicle-left">
+                                                                <span class="date-red">
+                                                                    تاریخ صدور :
+                                                                    26 اسد 1399
+                                                                </span>	<br>
+                                                                <span class="date-red">
+                                                                    تاریخ انقضاء :
+                                                                    1 جدی 1399
+                                                                </span>
+
+                                                            </div>
+
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="modal-footer transportCard-show-modal-footer">
+                                    <div class="btn-group float-left">
+                                        <a class="btn btn-md hover-element-info" href="#" data-dismiss="modal" aria-label="Close">
+                                            ثبت موتر
+                                            <i class="fa fa-check-circle"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script src="~/lib/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="~/lib/blueimp-JavaScript-Templates/js/tmpl.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.fileupload.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.fileupload-validate.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.fileupload-ui.js"></script>
+    <script type="text/javascript">
+        var licenses = [
+            //<th colspan="2">راننده</th>
+            //<th colspan="3">موتر</th>
+            //<th colspan="1">شماره ثبت</th>
+            //<th colspan="1">نوع لسانس</th>
+            //<th colspan="1">تاریخ صدور</th>
+            //<th colspan="1">تاریخ انقضاء</th>
+            //<th colspan="1">ملاحظات</th>
+            {
+                driver: 'صالح باقری',
+                car: 'تیوتا صرف فرونر 2009 سفید نمبر پلیت : کابل ش 5- 34194	',
+                registerNumber: '04',
+                licenseType: 'B',
+                registerTime: '1399/1/13',
+                endTime: '1399/3/31',
+                status: "expire"
+            },
+            {
+                driver: 'علی مظفری',
+                car: 'سراچه سفید نمبر پلیت : کابل 68961 ش	',
+                registerNumber: '05',
+                licenseType: 'B',
+                registerTime: '1399/1/13',
+                endTime: '1399/3/31',
+                status: "active"
+            },
+            {
+                driver: 'عالم خدادادی',
+                car: 'کرولا سالون مدل 1996 طلائی نمبر پلیت : کابل 84895-4 ش	',
+                registerNumber: '09',
+                licenseType: 'A',
+                registerTime: '1399/1/13',
+                endTime: '1399/3/31',
+                status: "active"
+            },
+            {
+                driver: 'نادری',
+                car: 'کرولا نقره ای نمبر پلیت : کابل ش 28327-3	',
+                registerNumber: '22',
+                licenseType: 'B',
+                registerTime: '1399/1/13',
+                endTime: '1399/3/31',
+                status: "active"
+            },
+            {
+                driver: 'مصطفی رحیمی',
+                car: 'صرف فرونر طلایی نمبر پلیت : کابل 7624-4 ش	',
+                registerNumber: '12',
+                licenseType: 'A',
+                registerTime: '1399/1/13',
+                endTime: '1399/3/31',
+                status: "active"
+            },
+            {
+                driver: 'حسین عباسی',
+                car: 'کرولا جگری 1997 نمبر پلیت : کابل 4-26214 ش	',
+                registerNumber: '01',
+                licenseType: 'B',
+                registerTime: '1399/1/13',
+                endTime: '1399/3/31',
+                status: "active"
+            },
+        ]
+        $(document).ready(function () {
+            showLicenses()
+        });
+
+        function showLicenses() {
+            licenses.forEach((license) => {
+                $("#licencesTableBody").append(`<tr class="${license.status}"> <td colspan="2">${license.driver}</td> <td colspan="3">${license.car}</td> <td colspan="1">${license.registerNumber}</td> <td colspan="1">${license.licenseType}</td> <td colspan="1">${license.registerTime}</td > <td colspan="1">${license.endTime}</td> <td colspan="1"> <div class="btn-group"> <button type="button" class="btn hover-element-info background-lightblue"> ویرایش <i class="fa fa-edit"></i> </button> <a type="button" class="btn hover-element-info background-lightblue" asp-action="Print" asp-controller="Transport"> مشاهده <i class="fa fa-eye"></i> </a> <button type="button" class="btn hover-element-info background-lightblue"> حذف <i class="fa fa-trash"></i> </button> </div> </td> </tr >`)
+            });
+        }
+
+        function licensesSearchFunction() {
+            var searchText = $("#licensesSearchInput").val().toLowerCase();
+            // Show only matching TR, hide rest of them
+            $.each($("#licensesTableBody tr"), function () {
+                console.log(" this is:", this)
+                if ($(this).text().toLowerCase().indexOf(searchText) === -1)
+                    $(this).hide();
+                else
+                    $(this).show();
+            });
+        }
+
+        function deleteTransportCard() {
+            alert("کارت موتر حذف شد")
+        }
+    </script>
+}
+
+

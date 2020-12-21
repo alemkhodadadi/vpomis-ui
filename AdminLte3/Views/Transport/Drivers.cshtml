@@ -1,0 +1,180 @@
+﻿
+@{
+    ViewData["Title"] = "لیست راننده ها";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="content transport-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header fixed  card-primary card-outline">
+                        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                            <li class="nav-item mr-1">
+                                <a class="nav-link bg-dark" asp-action="RegisterDriver" asp-controller="Transport">
+                                    <i class="fa fa-folder-plus"></i>
+                                    ثبت راننده جدید
+                                </a>
+                            </li>
+                            <li class="nav-item float-left ml-auto">
+                                <div class="input-group">
+                                    <input type="text" id="driverSearchInput" name="query" class="form-control">
+                                    <span class="input-group-append">
+                                        <button class="btn btn-info" onclick="driverSearchFunction()">
+                                            <i class="fa fa-search"></i>
+                                            جستجو
+                                        </button>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card-body p-0 table-responsive">
+                        <table id="driversTable" class="table table-condensed doc-table">
+                            <thead class="fixed">
+                                <tr>
+                                    <th colspan="3">عکس</th>
+                                    <th colspan="1">نام و تخلص</th>
+                                    <th colspan="1">کارمند</th>
+                                    <th colspan="1">وظیفه</th>
+                                    <th colspan="1">شماره تلفن</th>
+                                    <th colspan="1">وضعیت</th>
+                                    <th colspan="2">توضیحات</th>
+                                    <th colspan="1">ملاحظات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="driversTableBody">
+                                <tr>
+                                    <td colspan="3"><img id="driverImage" src="http://www.tabassum-whc.org/wp-content/uploads/2019/03/IMG_3396.jpg" alt="" width='100' height='100' /></td>
+                                    <td colspan="1">صالح باقری</td>
+                                    <td colspan="1">مدیر انکشاف سیستم معلوماتی اداری</td>
+                                    <td colspan="1">آمر دولوپری در آی تی</td>
+                                    <td colspan="1">0749548451</td>
+                                    <td colspan="1">فعال</td>
+                                    <td colspan="2">تخلص در سیستم موجود نیست	</td>
+                                    <td colspan="1">
+                                        <div class="btn-group-vertical">
+                                            <a type="button" class="btn hover-element-info background-lightblue" asp-action="RegisterDriver" asp-controller="Transport">
+                                                ویرایش
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                            <button type="button" class="btn hover-element-info background-lightblue" data-toggle="modal" data-target="#deleteDriverModal">
+                                                حذف
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <form>
+                    <div class="modal fade" id="deleteDriverModal" tabindex="-1" role="dialog" aria-labelledby="addPetitionModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">حذف راننده</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group row">
+                                        <span class="modal-body-text">آیا از حذف راننده مطمین هستید؟</span>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary" data-dismiss="modal" onclick="deleteDriver()"><i class="fa fa-folder-plus"></i> حذف</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> انصراف</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script src="~/lib/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="~/lib/blueimp-JavaScript-Templates/js/tmpl.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.fileupload.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.fileupload-validate.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.fileupload-ui.js"></script>
+    <script type="text/javascript">
+        var drivers = [
+            {
+                name: 'علی مظفری',
+                job: 'آمریت بخش سیستم معلوماتی',
+                phoneNumber: '0775425236',
+                activity: 'فعال',
+                explanation: 'نام در سیستم موجود نیست	',
+                employee: 'آمریت انکشافی سیستم معلوماتی اداری',
+                image: 'http://www.tabassum-whc.org/wp-content/uploads/2019/03/IMG_3396.jpg',
+            },
+            {
+                name: 'صالح باقری',
+                job: 'مدیریت انکشافی سیستم معلوماتی اداری',
+                phoneNumber: '0758465925',
+                activity: 'فعال',
+                explanation: 'تخلص در سیستم موجود نیست	',
+                employee: 'مدیریت انکشافی سیستم معلوماتی اداری',
+                image: 'http://www.tabassum-whc.org/wp-content/uploads/2019/03/IMG_3396.jpg',
+            },
+            {
+                name: 'رمضان رحیمی',
+                job: 'مدیر شبکه',
+                phoneNumber: '0745256352',
+                activity: 'فعال',
+                explanation: 'ایشان مدیر شبکه در قسمت آی تی هستند	',
+                employee: 'کارمند قسمت آی تی',
+                image: 'https://media-exp1.licdn.com/dms/image/C4D03AQEWusNLA1yluA/profile-displayphoto-shrink_400_400/0?e=1607558400&v=beta&t=IIb8SMUeu9eBCypBYCG3HovpEI8cOciKNnm69MIkOb4',
+            },
+            {
+                name: 'حسین عباسی',
+                job: 'مدیریت عمومی در بخش آی تی',
+                phoneNumber: '0745520320',
+                activity: 'فعال',
+                explanation: 'مدیریت بخش عمومی را انجام میدهند	',
+                employee: 'کارمند بخش عمومی در مدیریت آی تی',
+                image: 'http://www.tabassum-whc.org/wp-content/uploads/2019/03/IMG_3396.jpg',
+            },
+        ]
+        $(document).ready(function () {
+            showDrivers();
+        });
+
+        function showDrivers() {
+            drivers.forEach((driver) => {
+                $("#driversTableBody").append(`<tr> <td colspan="3"><img id="driverImage" src="${driver.image}" alt=""  width='100' height='100' /></td> <td colspan="1">${driver.name}</td> <td colspan="1">${driver.employee}</td> <td colspan="1">${driver.job}</td> <td colspan="1">${driver.phoneNumber}</td> <td colspan="1">${driver.activity}</td> <td colspan="2">${driver.explanation}</td> <td colspan="1" class="btn-group-vertical"> <button type="button" class="btn hover-element-info background-lightblue"> ویرایش <i class="fa fa-edit"></i> </button> <button type="button" class="btn hover-element-info background-lightblue"> حذف <i class="fa fa-trash"></i> </button> </td> </tr>`)
+            });
+        }
+
+        function driverSearchFunction() {
+            var searchText = $("#driverSearchInput").val().toLowerCase();
+            // Show only matching TR, hide rest of them
+            $.each($("#driversTableBody tr"), function () {
+                console.log(" this is:", this)
+                if ($(this).text().toLowerCase().indexOf(searchText) === -1)
+                    $(this).hide();
+                else
+                    $(this).show();
+            });
+        }
+
+        function deleteDriver() {
+            alert("راننده حذف شد")
+        }
+    </script>
+}
+
+

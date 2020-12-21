@@ -1,0 +1,186 @@
+﻿
+@{
+    ViewData["Title"] = "Cars";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content transport-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header fixed card-primary card-outline">
+                        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                            <li class="nav-item mr-1">
+                                <a class="nav-link bg-dark" asp-action="RegisterCar" asp-controller="Transport"><i class="fa fa-folder-plus"></i> ثبت موتر جدید</a>
+                            </li>
+                            <li class="nav-item float-left ml-auto">
+                                <div class="input-group">
+                                    <input type="text" id="carSearchInput" name="query" class="form-control">
+                                    <span class="input-group-append">
+                                        <button class="btn btn-info" onclick="carSearchFunction()">
+                                            <i class="fa fa-search"></i>
+                                            جستجو
+                                        </button>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card-body p-0 table-responsive">
+                        <table id="generalTable" class="table table-condensed doc-table">
+                            <thead>
+                                <tr>
+                                    <th colspan="1">نوع وسیله</th>
+                                    <th colspan="1">رنگ</th>
+                                    <th colspan="1">شماره پلیت</th>
+                                    <th colspan="1">شماره انجن</th>
+                                    <th colspan="1">شماره شاسی</th>
+                                    <th colspan="1">نوع</th>
+                                    <th colspan="2">تصویر</th>
+                                    <th colspan="2">ملاحظات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="generalTableBody">
+                               
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    @*<div class="card-footer">
+                            <ul class="pagination m-0 justify-content-center">
+                                <pager source="Model.Petitions" generation-mode="ListOnly" />
+                            </ul>
+                        </div>*@
+                </div><!-- /.card -->
+
+                <form asp-action="Create" asp-controller="Admin" method="post">
+                    <div class="modal fade" id="deleteCarModal" tabindex="-1" role="dialog" aria-labelledby="addPetitionModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">حذف موتر</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group row">
+                                        <span class="modal-body-text">آیا از حذف موتر مطمین هستید؟</span>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary" data-dismiss="modal" onclick="deleteCar()"><i class="fa fa-folder-plus"></i></button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+    <div id='DeleteModal' class="parent-modal hide">
+        <div class="detail-modal">
+            <h4>Car</h4>
+            <hr />
+            <dl id="employee_detail" class="row">
+            </dl>
+            <div class="row justified-two-items">
+                <button type="button" id="edit_button" onclick="changeToEditStatus()" class="btn btn-primary simpleButton">
+                    <span style="color: white">Edit</span>
+                </button>
+                <button type="button" id="close_button" onclick="toggleModal('refresh')" class="btn btn-primary simpleButton">
+                    <span style="color: white">Close</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script src="~/lib/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="~/lib/blueimp-JavaScript-Templates/js/tmpl.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.fileupload.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.fileupload-validate.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.fileupload-ui.js"></script>
+    <script type="text/javascript">
+        var cars = [
+            {
+                id: "asd-asdf-asdf-asd-fas-df-asd-fs-df",
+                carType: 'کرولا 2017 سفید سالون دار',
+                color: 'قهوه ای',
+                plateNumber: '13749',
+                engineNumber: '1VDO364662',
+                chassisNumber: 'JTMHV01J5H4217477',
+                ownerType: 'دولتی',
+                image: 'https://magarticles.magzter.com/articles/138/381460/5dbabcadca0cb/HOT-New-Toyota-Corolla.jpg',
+            },
+            {
+                id: "asd-asdf-asdf-asd-fas-df-asd-fs-df",
+                carType: 'نیسان آبی 2015',
+                color: 'قهوه ای',
+                plateNumber: '13749',
+                engineNumber: '1VDO364662',
+                chassisNumber: 'JTMHV01J5H4217477',
+                ownerType: 'دولتی',
+                image: 'https://magarticles.magzter.com/articles/138/381460/5dbabcadca0cb/HOT-New-Toyota-Corolla.jpg',
+            },
+            {
+                id: "asd-asdf-asdf-asd-fas-df-asd-fs-df",
+                carType: 'کمری 2018 سفید',
+                color: 'قهوه ای',
+                plateNumber: '13749',
+                engineNumber: '1VDO364662',
+                chassisNumber: 'JTMHV01J5H4217477',
+                ownerType: 'دولتی',
+                image: 'https://magarticles.magzter.com/articles/138/381460/5dbabcadca0cb/HOT-New-Toyota-Corolla.jpg',
+            },
+            {
+                id: "asd-asdf-asdf-asd-fas-df-asd-fs-df",
+                carType: 'رنجر قهوه ای امنیت ملی',
+                color: 'قهوه ای',
+                plateNumber: '13749',
+                engineNumber: '1VDO364662',
+                chassisNumber: 'JTMHV01J5H4217477',
+                ownerType: 'دولتی',
+                image: 'https://magarticles.magzter.com/articles/138/381460/5dbabcadca0cb/HOT-New-Toyota-Corolla.jpg',
+            }
+        ]
+        $(document).ready(function () {
+            showCars()
+        });
+
+        function showCars() {
+            console.log("showing cars ...")
+            cars.forEach((car) => {
+                $("#generalTableBody").append(`<tr><td colspan="1">${car.carType}</td> <td colspan="1">${car.color}</td> <td colspan="1">${car.plateNumber}</td> <td colspan="1">${car.enginNumber}</td> <td colspan="1">${car.chassisNumber}</td> <td colspan="1">${car.ownerType}</td> <td colspan="2"><img id="carImage" src="${car.image}" alt=""  width='100' height='100' /></td> <td colspan="2" class="btn-group-vertical"> <button type="button" class="btn hover-element-info background-lightblue"> ویرایش <i class="fa fa-edit"></i> </button> <button type="button" class="btn hover-element-info background-lightblue"> مشاهده <i class="fa fa-eye"></i> </button> <button type="button" class="btn hover-element-info background-lightblue"> حذف <i class="fa fa-trash"></i> </button> </td> </tr>`)
+            });
+        }
+
+        function carSearchFunction() {
+            var searchText = $("#carSearchInput").val().toLowerCase();
+            // Show only matching TR, hide rest of them
+            $.each($("#generalTableBody tr"), function () {
+                if ($(this).text().toLowerCase().indexOf(searchText) === -1)
+                    $(this).hide();
+                else
+                    $(this).show();
+            });
+        }
+
+        function deleteCar() {
+            alert("موتر حذف شد")
+        }
+    </script>
+}
+
+

@@ -1,0 +1,192 @@
+﻿
+@{
+    ViewData["Title"] = "کارت های موتر جدید";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="content transport-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body p-0 table-responsive">
+                        <table id="licencesTable" class="table table-condensed doc-table">
+                            <thead class="fixed">
+                                <tr>
+                                    <th colspan="1">راننده</th>
+                                    <th colspan="2">عکس راننده</th>
+                                    <th colspan="2">موتر</th>
+                                    <th colspan="2">عکس موتر</th>
+                                    <th colspan="2">توضیحات</th>
+                                    <th colspan="1">ملاحظات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="licencesTableBody">
+                                <tr>
+                                    <td colspan="1">صالح باقری</td>
+                                    <td colspan="2"><img id="driverImage" src="http://www.tabassum-whc.org/wp-content/uploads/2019/03/IMG_3396.jpg" alt="" width='100' height='100' /></td>
+                                    <td colspan="2">تیوتا لند کروزر 2017 سفید نمبر پلیت : 13749	</td>
+                                    <td colspan="2"><img id="carImage" src="https://magarticles.magzter.com/articles/138/381460/5dbabcadca0cb/HOT-New-Toyota-Corolla.jpg" alt="" width='100' height='100' /></td>
+                                    <td colspan="2">ایشان تقاضای صدور عاجیل کارت برای موتر خود دارد</td>
+                                    <td colspan="1">
+                                        <button data-toggle="modal" data-target="#manageTransportCardModal" type="button" class="btn hover-element-info background-lightblue">
+                                            تصمیم گیری
+                                            <i class="fa fa-pencil-alt"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal fade" id="manageTransportCardModal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="form-group row">
+                                    <div class="form-group col-md-6 input-select-parent">
+                                        <label>وضعیت: </label>
+                                        <select class="form-control" data-tags="true">
+                                            <option value="accept">تایید</option>
+                                            <option value="ignore">عدم تایید</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div id="acceptRequiredInfo">
+                                    <div class="row form-group">
+                                        <div class="form-group col-md-6 input-select-parent">
+                                            <label>مدت زمان: </label>
+                                            <select class="form-control" data-tags="true">
+                                                <option data-tokens="3">سه ماهه</option>
+                                                <option data-tokens="6">شش ماهه</option>
+                                                <option data-tokens="3">یک ساله</option>
+                                                <option data-tokens="3">دو ساله</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-6 input-select-parent">
+                                            <label>نوع لسانس: </label>
+                                            <select class="form-control" data-tags="true">
+                                                <option data-tokens="A">A</option>
+                                                <option data-tokens="B">B</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="form-group col-12">
+                                        <label>توضیحات</label>
+                                        <textarea class="form-control" placeholder="نظرات و یا توضیحات..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" data-dismiss="modal" onclick="deleteTransportCard()"><i class="fa fa-folder-plus"></i> ثبت</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> انصراف</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script src="~/lib/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="~/lib/blueimp-JavaScript-Templates/js/tmpl.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.fileupload.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.fileupload-validate.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+    <script src="~/lib/blueimp-file-upload/js/jquery.fileupload-ui.js"></script>
+    <script type="text/javascript">
+        var licenses = [
+            //<th colspan="1">راننده</th>
+            //<th colspan="2">عکس راننده</th>
+            //<th colspan="2">موتر</th>
+            //<th colspan="2">عکس موتر</th>
+            //<th colspan="2">توضیحات</th>
+            //<th colspan="1">ملاحظات</th>
+            {
+                driver: 'صالح باقری',
+                driverImage: 'http://www.tabassum-whc.org/wp-content/uploads/2019/03/IMG_3396.jpg',
+                car: 'تیوتا صرف فرونر 2009 سفید نمبر پلیت : کابل ش 5- 34194',
+                carImage: 'https://magarticles.magzter.com/articles/138/381460/5dbabcadca0cb/HOT-New-Toyota-Corolla.jpg',
+                explanation: 'ایشان تقاضای صدور عاجیل کارت برای موتر خود دارد',
+            },
+            {
+                driver: 'صالح باقری',
+                driverImage: 'http://www.tabassum-whc.org/wp-content/uploads/2019/03/IMG_3396.jpg',
+                car: 'تیوتا صرف فرونر 2009 سفید نمبر پلیت : کابل ش 5- 34194',
+                carImage: 'https://magarticles.magzter.com/articles/138/381460/5dbabcadca0cb/HOT-New-Toyota-Corolla.jpg',
+                explanation: 'ایشان تقاضای صدور عاجیل کارت برای موتر خود دارد',
+            },
+            {
+                driver: 'صالح باقری',
+                driverImage: 'http://www.tabassum-whc.org/wp-content/uploads/2019/03/IMG_3396.jpg',
+                car: 'تیوتا صرف فرونر 2009 سفید نمبر پلیت : کابل ش 5- 34194',
+                carImage: 'https://magarticles.magzter.com/articles/138/381460/5dbabcadca0cb/HOT-New-Toyota-Corolla.jpg',
+                explanation: 'ایشان تقاضای صدور عاجیل کارت برای موتر خود دارد',
+            },
+            {
+                driver: 'صالح باقری',
+                driverImage: 'http://www.tabassum-whc.org/wp-content/uploads/2019/03/IMG_3396.jpg',
+                car: 'تیوتا صرف فرونر 2009 سفید نمبر پلیت : کابل ش 5- 34194',
+                carImage: 'https://magarticles.magzter.com/articles/138/381460/5dbabcadca0cb/HOT-New-Toyota-Corolla.jpg',
+                explanation: 'ایشان تقاضای صدور عاجیل کارت برای موتر خود دارد',
+            },
+            {
+                driver: 'صالح باقری',
+                driverImage: 'http://www.tabassum-whc.org/wp-content/uploads/2019/03/IMG_3396.jpg',
+                car: 'تیوتا صرف فرونر 2009 سفید نمبر پلیت : کابل ش 5- 34194',
+                carImage: 'https://magarticles.magzter.com/articles/138/381460/5dbabcadca0cb/HOT-New-Toyota-Corolla.jpg',
+                explanation: 'ایشان تقاضای صدور عاجیل کارت برای موتر خود دارد',
+            },
+            {
+                driver: 'صالح باقری',
+                driverImage: 'http://www.tabassum-whc.org/wp-content/uploads/2019/03/IMG_3396.jpg',
+                car: 'تیوتا صرف فرونر 2009 سفید نمبر پلیت : کابل ش 5- 34194',
+                carImage: 'https://magarticles.magzter.com/articles/138/381460/5dbabcadca0cb/HOT-New-Toyota-Corolla.jpg',
+                explanation: 'ایشان تقاضای صدور عاجیل کارت برای موتر خود دارد',
+            },
+        ]
+        $(document).ready(function () {
+            showLicenses()
+            $('select').on('change', function (e) {
+                console.log("value is:", this.value)
+                if (this.value == 'ignore') {
+                    $("#acceptRequiredInfo").addClass("display-none")
+                } else {
+                    $("#acceptRequiredInfo").removeClass("display-none")
+                }
+            });
+        });
+
+        function showLicenses() {
+            licenses.forEach((license) => {
+                $("#licencesTableBody").append(`<tr> <td colspan="1">${license.driver}</td> <td colspan="2"><img id="driverImage" src="${license.driverImage}" alt=""/></td> <td colspan="2">${license.car}</td> <td colspan="2"><img id="carImage" src="${license.carImage}" alt=""/></td> <td colspan="2">${license.explanation}</td> <td colspan="1"> <a type="button" class="btn hover-element-info background-lightblue" asp-action="Print" asp-controller="Transport"> تصمیم گیری <i class="fa fa-eye"></i> </a> </td> </tr>`)
+            });
+        }
+
+        function licensesSearchFunction() {
+            var searchText = $("#licensesSearchInput").val().toLowerCase();
+            // Show only matching TR, hide rest of them
+            $.each($("#licensesTableBody tr"), function () {
+                console.log(" this is:", this)
+                if ($(this).text().toLowerCase().indexOf(searchText) === -1)
+                    $(this).hide();
+                else
+                    $(this).show();
+            });
+        }
+
+        function deleteTransportCard() {
+            alert("عملیات کارت موتر به پایان رسید")
+        }
+    </script>
+}
+
+

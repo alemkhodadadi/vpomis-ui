@@ -1,0 +1,426 @@
+﻿
+@{
+    ViewData["Title"] = "Profile";
+    var dir = "rtl";
+    var dirRight = (dir == "ltr" ? "right" : "left");
+    var dirLeft = (dir == "ltr" ? "left" : "right");
+}
+
+@section styles
+{
+    <link href="~/lib/fullcalendar/core/main.css" rel="stylesheet" />
+    <link href="~/lib/fullcalendar/daygrid/main.css" rel="stylesheet" />
+    <link href="~/lib/fullcalendar/bootstrap/main.css" rel="stylesheet" />
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+
+                <!-- Profile Image -->
+                <div class="card card-primary card-outline">
+                    <div class="card-body box-profile">
+                        <div class="text-center">
+                            <img class="profile-user-img img-fluid img-circle"
+                                 src="~/img/user4-128x128.jpg"
+                                 alt="User profile picture">
+                        </div>
+
+                        <h6 class="profile-username text-center">مسعوده ظفری</h6>
+
+                        <p class="text-muted text-center">آمریت خدمات</p>
+
+                        <ul class="list-group list-group-unbordered mb-3">
+                            <li class="list-group-item">
+                                <b>تلفن</b> <a class="float-@dirRight">0789123456</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>ایمیل</b> <a class="float-@dirRight">m.zafari@vpo.gov.af</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>حضور</b> <a class="float-@dirRight"><i class="fa fa-circle text-success"></i></a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>تحصیلات</b> <a class="float-@dirRight">ماستر</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>ولایت اصلی</b> <a class="float-@dirRight">کابل</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>نام پدر</b> <a class="float-@dirRight">آقای ظفری</a>
+                            </li>
+                        </ul>
+
+                        @*<a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>*@
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header p-2">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">گزارش حاضری</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">درخواست‌ها</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">ثبت درخواست</a></li>
+                        </ul>
+                    </div><!-- /.card-header -->
+                    <div class="card-body">
+                        <div class="tab-content">
+                            <div class="active tab-pane" id="activity">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6 col-12">
+                                        <div class="info-box">
+                                            <span class="info-box-icon bg-info"><i class="fa fa-calendar-alt"></i></span>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text">کل ساعت اداری</span>
+                                                <span class="info-box-number">۱۷۶ ساعت</span>
+                                            </div>
+                                            <!-- /.info-box-content -->
+                                        </div>
+                                        <!-- /.info-box -->
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-md-4 col-sm-6 col-12">
+                                        <div class="info-box">
+                                            <span class="info-box-icon bg-success"><i class="fa fa-user-clock"></i></span>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text">ساعات حضور من</span>
+                                                <span class="info-box-number">۸۶ ساعت</span>
+                                            </div>
+                                            <!-- /.info-box-content -->
+                                        </div>
+                                        <!-- /.info-box -->
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-md-4 col-sm-6 col-12">
+                                        <div class="info-box">
+                                            <span class="info-box-icon bg-warning"><i class="fa fa-chart-bar"></i></span>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text">میانگین کل</span>
+                                                <span class="info-box-number">۸۸.۲ ساعت</span>
+                                            </div>
+                                            <!-- /.info-box-content -->
+                                        </div>
+                                        <!-- /.info-box -->
+                                    </div>
+                                    <!-- /.col -->
+                                </div>
+
+                                <div class="card card-outline card-danger">
+                                    <div class="card-header">
+                                        <h6 class="card-title">ماه میزان ۱۳۹۸</h6>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <table class="table table-bordered calendar">
+                                            <thead class="bg-light">
+                                                <tr class="text-center">
+                                                    <th class="p-1">شنبه</th>
+                                                    <th class="p-1">یکشنبه</th>
+                                                    <th class="p-1">دوشنبه</th>
+                                                    <th class="p-1">سه‌شنبه</th>
+                                                    <th class="p-1">چهارشنبه</th>
+                                                    <th class="p-1">پنجشنبه</th>
+                                                    <th class="p-1">جمعه</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-center">
+                                                <tr>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                        <h6>1</h6>
+                                                        <span class="badge badge-light">08:21:33<i class="fa fa-sign-in-alt ml-1"></i></span>
+                                                        <hr class="m-1" />
+                                                        <span class="badge badge-light">15:29:49<i class="fa fa-sign-out-alt ml-1"></i></span>
+                                                    </td>
+
+                                                    <td>
+                                                        <h6>2</h6>
+                                                        <span class="badge badge-light">08:21:33<i class="fa fa-sign-in-alt ml-1"></i></span>
+                                                        <hr class="m-1" />
+                                                        <span class="badge badge-light">15:29:49<i class="fa fa-sign-out-alt ml-1"></i></span>
+                                                    </td>
+                                                    <td>
+                                                        <h6>3</h6>
+                                                        <span class="badge badge-light">08:21:33<i class="fa fa-sign-in-alt ml-1"></i></span>
+                                                        <hr class="m-1" />
+                                                        <span class="badge badge-light text-success">استثناء<i class="fa fa-sign-out-alt ml-1"></i></span>
+                                                    </td>
+                                                    <td>
+                                                        <h6>4</h6>
+                                                        <span class="badge badge-light">08:21:33<i class="fa fa-sign-in-alt ml-1"></i></span>
+                                                        <hr class="m-1" />
+                                                        <span class="badge badge-light">15:29:49<i class="fa fa-sign-out-alt ml-1"></i></span>
+                                                    </td>
+                                                    <td class="text-danger">
+                                                        <h6>5</h6>
+                                                        <strong>رخصتی</strong>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-danger">
+                                                        <h6>6</h6>
+                                                        <strong>رخصتی</strong><br />
+                                                    </td>
+                                                    <td>
+                                                        <h6>7</h6>
+                                                        <span class="badge badge-light">08:21:33<i class="fa fa-sign-in-alt ml-1"></i></span>
+                                                        <hr class="m-1" />
+                                                        <span class="badge badge-light">15:29:49<i class="fa fa-sign-out-alt ml-1"></i></span>
+                                                    </td>
+                                                    <td>
+                                                        <h6>8</h6>
+                                                        <span class="badge badge-light">08:21:33<i class="fa fa-sign-in-alt ml-1"></i></span>
+                                                        <hr class="m-1" />
+                                                        <span class="badge badge-light">15:29:49<i class="fa fa-sign-out-alt ml-1"></i></span>
+                                                    </td>
+
+                                                    <td>
+                                                        <h6>9</h6>
+                                                        <span class="badge badge-light">08:21:33<i class="fa fa-sign-in-alt ml-1"></i></span>
+                                                        <hr class="m-1" />
+                                                        <span class="badge badge-light">15:29:49<i class="fa fa-sign-out-alt ml-1"></i></span>
+                                                    </td>
+                                                    <td>
+                                                        <h6>10</h6>
+                                                        <span class="badge badge-light">08:21:33<i class="fa fa-sign-in-alt ml-1"></i></span>
+                                                        <hr class="m-1" />
+                                                        <span class="badge badge-light">15:29:49<i class="fa fa-sign-out-alt ml-1"></i></span>
+                                                    </td>
+                                                    <td>
+                                                        <h6>11</h6>
+                                                        <span class="badge badge-light">08:21:33<i class="fa fa-sign-in-alt ml-1"></i></span>
+                                                        <hr class="m-1" />
+                                                        <span class="badge badge-light">15:29:49<i class="fa fa-sign-out-alt ml-1"></i></span>
+                                                    </td>
+                                                    <td class="text-danger">
+                                                        <h6>12</h6>
+                                                        <strong>رخصتی</strong>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <h6>13</h6>
+                                                        <span class="badge badge-light">08:21:33<i class="fa fa-sign-in-alt ml-1"></i></span>
+                                                        <hr class="m-1" />
+                                                        <span class="badge badge-light">15:29:49<i class="fa fa-sign-out-alt ml-1"></i></span>
+                                                    </td>
+
+                                                    <td>
+                                                        <h6>14</h6>
+                                                        <span class="badge badge-light">08:21:33<i class="fa fa-sign-in-alt ml-1"></i></span>
+                                                        <hr class="m-1" />
+                                                        <span class="badge badge-light">15:29:49<i class="fa fa-sign-out-alt ml-1"></i></span>
+                                                    </td>
+                                                    <td class="text-danger">
+                                                        <h6>15</h6>
+                                                        <strong>مریضی</strong><br />
+                                                    </td>
+                                                    <td>
+                                                        <h6>16</h6>
+                                                        <span class="badge badge-danger">ثبت نشده<i class="fa fa-sign-in-alt ml-1"></i></span>
+                                                        <hr class="m-1" />
+                                                        <span class="badge badge-light">15:29:49<i class="fa fa-sign-out-alt ml-1"></i></span>
+                                                    </td>
+                                                    <td>
+                                                        <h6>17</h6>
+                                                        08:21:33
+                                                        <hr class="m-1" />
+                                                        16:02:42
+                                                    </td>
+                                                    <td>
+                                                        <h6>18</h6>
+                                                        08:21:33
+                                                        <hr class="m-1" />
+                                                        16:02:42
+                                                    </td>
+                                                    <td class="text-danger">
+                                                        <h6>19</h6>
+                                                        <strong>رخصتی</strong>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <h6>20</h6>
+                                                        08:21:33
+                                                        <hr class="m-1" />
+                                                        16:02:42
+                                                    </td>
+                                                    <td>
+                                                        <h6>21</h6>
+                                                        08:21:33
+                                                        <hr class="m-1" />
+                                                        16:02:42
+                                                    </td>
+                                                    <td class="bg-gradient-olive">
+                                                        <h6>22</h6>
+                                                        <span class="text-danger">09:35:33</span>
+                                                        <hr class="m-1" />
+                                                        16:02:42
+                                                    </td>
+
+                                                    <td class="text-secondary">
+                                                        <h6>23</h6>
+                                                        00:00:00
+                                                        <hr class="m-1" />
+                                                        00:00:00
+                                                    </td>
+                                                    <td class="text-secondary">
+                                                        <h6>24</h6>
+                                                        00:00:00
+                                                        <hr class="m-1" />
+                                                        00:00:00
+                                                    </td>
+                                                    <td class="text-secondary">
+                                                        <h6>25</h6>
+                                                        00:00:00
+                                                        <hr class="m-1" />
+                                                        00:00:00
+                                                    </td>
+                                                    <td class="text-danger">
+                                                        <h6>26</h6>
+                                                        <strong>رخصتی</strong>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-secondary">
+                                                        <h6>27</h6>
+                                                        00:00:00
+                                                        <hr class="m-1" />
+                                                        00:00:00
+                                                    </td>
+                                                    <td class="text-secondary">
+                                                        <h6>28</h6>
+                                                        00:00:00
+                                                        <hr class="m-1" />
+                                                        00:00:00
+                                                    </td>
+                                                    <td class="text-secondary">
+                                                        <h6>29</h6>
+                                                        00:00:00
+                                                        <hr class="m-1" />
+                                                        00:00:00
+                                                    </td>
+
+                                                    <td class="text-secondary">
+                                                        <h6>30</h6>
+                                                        00:00:00
+                                                        <hr class="m-1" />
+                                                        00:00:00
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
+                            </div>
+                            <!-- /.tab-pane -->
+                            <div class="tab-pane" id="timeline">
+                                <div class="card card-outline card-danger">
+                                    <div class="card-header">
+                                        <h6 class="card-title">ماه میزان ۱۳۹۸</h6>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <div id="calendar"></div>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
+                            </div>
+                            <!-- /.tab-pane -->
+
+                            <div class="tab-pane" id="settings">
+                                <div class="card card-outline card-danger">
+                                    <div class="card-header">
+                                        <h6 class="card-title">ماه میزان ۱۳۹۸</h6>
+                                    </div>
+                                    <div class="card-body">
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
+                            </div>
+                            <!-- /.tab-pane -->
+                        </div>
+                        <!-- /.tab-content -->
+                    </div><!-- /.card-body -->
+                </div>
+                <!-- /.nav-tabs-custom -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+
+@section scripts
+{
+    <script type="text/javascript" src="~/lib/fullcalendar/core/main.js"></script>
+    <script src="~/lib/fullcalendar/daygrid/main.js"></script>
+    <script type="text/javascript" src="~/lib/fullcalendar/bootstrap/main.js"></script>
+    <script type="text/javascript" src="~/lib/fullcalendar/core/locales/fa.js"></script>
+    <script>
+
+        //$(document).ready(function () {
+        //    var calendarEl = $('#calendar');
+        //    var calendar = new FullCalendar.Calendar(calendarEl, {
+        //        plugins: ['dayGrid'],
+        //        isJalaali: true,
+        //        locale: 'fa',
+        //        header: {
+        //            left: 'next,prev today',
+        //            center: '',
+        //            right: 'title'
+        //        },
+        //        buttonText: {
+        //            today: 'امروز',
+        //            month: 'ماه',
+        //            week: 'هفته',
+        //            day: 'روز'
+        //        }
+        //    });
+
+        //    calendar.render();
+        //});
+
+                document.addEventListener('DOMContentLoaded', function() {
+                    var calendarEl = document.getElementById('calendar');
+
+                    var calendar = new FullCalendar.Calendar(calendarEl, {
+                        plugins: ['dayGrid'],
+                        isJalaali: true,
+                        locale: 'fa',
+                        contentHeight: 'auto',
+                        header: {
+                            left: 'next,prev today',
+                            center: '',
+                            right: 'title'
+                        },
+                        buttonText: {
+                            today: 'امروز',
+                            month: 'ماه',
+                            week: 'هفته',
+                            day: 'روز'
+                        }
+                    });
+
+                    calendar.render();
+                });
+    </script>
+}

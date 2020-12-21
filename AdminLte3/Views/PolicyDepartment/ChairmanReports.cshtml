@@ -1,0 +1,382 @@
+﻿@{
+    ViewData["Title"] = "پنل گزارش آمریت ها";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="content transport-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card reports-card">
+                    <div class="card-header fixed card-primary card-outline">
+                        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                            <li class="nav-item mr-1">
+                                <a class="nav-link bg-dark" asp-action="OfficeReports" asp-controller="PolicyDepartment"><i class="fa fa-folder-plus"></i>لیست گزارش ها</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body p-0 table-responsive">
+                            <table id="generalTable" class="table table-condensed doc-table">
+                                <thead>
+                                    <tr>
+                                        <th colspan="4">کارمند</th>
+                                        <th colspan="4">آمریت</th>
+                                        <th colspan="4">اعمال</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="generalTableBody">
+                                    <tr>
+                                        <td colspan="4">
+                                            <span class="list-item-titles"> صالح باقری </span>
+                                        </td>
+                                        <td colspan="4">
+                                            <span class="list-item-titles"> تکنالوژی معلوماتی </span>
+                                        </td>
+                                        <td colspan="4">
+                                            <div class="btn-group">
+                                                <a type="button" href="#" class="btn hover-element-info background-lightblue disabled">
+                                                    15 فعالیت جدید
+                                                </a>
+                                                <a type="button" class="btn hover-element-info background-lightblue" asp-action="StaffsTasksCategories" asp-controller="PolicyDepartment">
+                                                    مشاهده دسته بندی ها
+                                                    <i class="fa fa-eye"></i>
+                                                </a>
+                                                <a type="button" href="#" class="btn hover-element-info background-lightblue" data-toggle="modal" data-target="#ConfirmAllCategoryReports">
+                                                    تایید همه
+                                                    <i class="fa fa-check-circle"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <span class="list-item-titles"> صالح باقری </span>
+                                    </td>
+                                    <td colspan="4">
+                                        <span class="list-item-titles"> تکنالوژی معلوماتی </span>
+                                    </td>
+                                    <td colspan="4">
+                                        <div class="btn-group">
+                                            <a type="button" href="#" class="btn hover-element-info background-lightblue disabled">
+                                                15 فعالیت جدید
+                                            </a>
+                                            <a type="button" class="btn hover-element-info background-lightblue" asp-action="StaffsTasksCategories" asp-controller="PolicyDepartment">
+                                                مشاهده دسته بندی ها
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                            <a type="button" href="#" class="btn hover-element-info background-lightblue" data-toggle="modal" data-target="#ConfirmAllCategoryReports">
+                                                تایید همه
+                                                <i class="fa fa-check-circle"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <span class="list-item-titles"> صالح باقری </span>
+                                    </td>
+                                    <td colspan="4">
+                                        <span class="list-item-titles"> تکنالوژی معلوماتی </span>
+                                    </td>
+                                    <td colspan="4">
+                                        <div class="btn-group">
+                                            <a type="button" href="#" class="btn hover-element-info background-lightblue disabled">
+                                                15 فعالیت جدید
+                                            </a>
+                                            <a type="button" class="btn hover-element-info background-lightblue" asp-action="StaffsTasksCategories" asp-controller="PolicyDepartment">
+                                                مشاهده دسته بندی ها
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                            <a type="button" href="#" class="btn hover-element-info background-lightblue" data-toggle="modal" data-target="#ConfirmAllCategoryReports">
+                                                تایید همه
+                                                <i class="fa fa-check-circle"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <span class="list-item-titles"> صالح باقری </span>
+                                    </td>
+                                    <td colspan="4">
+                                        <span class="list-item-titles"> تکنالوژی معلوماتی </span>
+                                    </td>
+                                    <td colspan="4">
+                                        <div class="btn-group">
+                                            <a type="button" href="#" class="btn hover-element-info background-lightblue disabled">
+                                                15 فعالیت جدید
+                                            </a>
+                                            <a type="button" class="btn hover-element-info background-lightblue" asp-action="StaffsTasksCategories" asp-controller="PolicyDepartment">
+                                                مشاهده دسته بندی ها
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                            <a type="button" href="#" class="btn hover-element-info background-lightblue" data-toggle="modal" data-target="#ConfirmAllCategoryReports">
+                                                تایید همه
+                                                <i class="fa fa-check-circle"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <span class="list-item-titles"> صالح باقری </span>
+                                    </td>
+                                    <td colspan="4">
+                                        <span class="list-item-titles"> تکنالوژی معلوماتی </span>
+                                    </td>
+                                    <td colspan="4">
+                                        <div class="btn-group">
+                                            <a type="button" href="#" class="btn hover-element-info background-lightblue disabled">
+                                                15 فعالیت جدید
+                                            </a>
+                                            <a type="button" class="btn hover-element-info background-lightblue" asp-action="StaffsTasksCategories" asp-controller="PolicyDepartment">
+                                                مشاهده دسته بندی ها
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                            <a type="button" href="#" class="btn hover-element-info background-lightblue" data-toggle="modal" data-target="#ConfirmAllCategoryReports">
+                                                تایید همه
+                                                <i class="fa fa-check-circle"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form id="createStaffReportForm" action="/Task/AddTodo" method="post">
+        <div class="modal fade" id="createStaffReportModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ثبت کار جدید</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="row">
+                                <label for="Title" class="col-sm-3 col-form-label">عنوان وظیفه:</label>
+                                <textarea class="form-control col-sm-7" placeholder="عنوان ..." name="Explanation"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label for="Title" class="col-sm-3 col-form-label">تاریخ:</label>
+                                <input type="datetime-local" id="reportTitle" class="col-sm-7 form-control" name="Title">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label for="staticEmail" class="col-sm-3 col-form-label">دسته بندی وظیفه: </label>
+                                <div class="col-sm-7 none-padding-button">
+                                    <a class=" btn-md dropdown-toggle todoType-dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <input type="text" class="form-control input-sm cursor-pointer todoTypeInputToDisplay" placeholder="نوع آیتم" readonly>
+                                        <input type="hidden" class="todoTypeInputRealValue" name="TodoType">
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-task-status">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label for="Title" class="col-sm-3 col-form-label">توضیحات:</label>
+                                <textarea class="form-control col-sm-7" placeholder="توضیحات ..." name="Explanation"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"> انصراف <i class="fa fa-trash"></i></button>
+                        <button type="submit" class="btn btn-secondary">ثبت آیتم <i class="fa fa-check"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <form id="DeleteReportModal">
+        <div class="modal" tabindex="-1" role="dialog" id="deleteTaskModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" name="TodoID" id="TodoID" />
+                        <p>آیا این آیتم حذف شود؟</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"> انصراف <i class="fa fa-trash"></i></button>
+                        <button type="submit" class="btn btn-secondary"> حذف <i class="fa fa-check"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form id="ConfirmReportForm" action="/Task/ChangeTodoStatus" method="post">
+        <div class="modal" tabindex="-1" role="dialog" id="ConfirmAllCategoryReports">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" name="TodoID" id="TodoID" />
+                        <p>آیا تمام کارهای این دسته بندی تایید شود؟</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"> خیر <i class="fa fa-trash"></i></button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"> بله <i class="fa fa-check"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section scripts
+{
+    <script src="~/lib/Chart.js/Chart.min.js"></script>
+    <script src="~/lib/Chart.js/chartjs-plugin-datalabels.js"></script>
+
+    <script>
+        function openConfirmModal() {
+
+        }
+        var defaults = {
+            global: {
+                // example font
+                defaultFontFamily: 'IRANSans'
+            }
+        };
+
+        /////////
+        var daysInMonth = [];
+        var petitionNumbers = [];
+        var petResult;
+
+        function showChart() {
+            daysInMonth = petResult.days;
+            petitionNumbers = petResult.pets;
+            console.log(daysInMonth);
+            console.log(petitionNumbers);
+
+            let popCanvasName = $('#barChart').get(0).getContext('2d');
+
+            var barChartData = {
+                labels: daysInMonth,
+                datasets: [
+                    {
+                        label: 'تعداد عریضه‌های روزانه',
+                        backgroundColor: '#f56954',
+                        borderColor: '#f56954',
+                        pointRadius: false,
+                        pointColor: '#3b8bba',
+                        pointStrokeColor: '#f56954',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: '#f56954',
+                        data: petitionNumbers
+                    }
+                ]
+            }
+
+            var barChartOptions = {
+                responsive: true,
+                plugins: {
+                    // Change options for ALL labels of THIS CHART
+                    datalabels: {
+                        color: '#fff',
+                        anchor: 'center',
+                        align: 'right',
+                        clamp: true,
+                    }
+                },
+                legend: {
+                    display: true,
+                    labels: {
+                        fontFamily: 'IRANSans'
+                    },
+                    reverse: true,
+                    rtl: true,
+                    textDirection: 'rtl'
+                },
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            reverse: true,
+                            fontFamily: "IRANSans",
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        position: 'right',
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                },
+                tooltips: {
+                    titleFontFamily: 'IRANSans',
+                    titleAlign: 'right',
+                    bodyAlign: 'right',
+                    bodyFontFamily: 'IRANSans'
+                },
+                maintainAspectRatio: false,
+                datasetFill: false
+            }
+
+            var barChartName = new Chart(popCanvasName, {
+                type: 'bar',
+                plugins: [{
+                    ChartDataLabels
+                }],
+                data: barChartData,
+                options: barChartOptions,
+                defaults: defaults
+            });
+        }
+        function getChartData() {
+            return fetch('/Petitions/Report/DailyPetitions',
+                {
+                    method: 'get',
+                    headers: {
+                        'Content-Type': 'application/json;charset=UTF-8'
+                    }
+                })
+                .then(function (response) {
+                    if (response.ok) {
+                        return response.text();
+                    } else {
+                        throw Error('Response Not OK');
+                    }
+                })
+                .then(function (text) {
+                    try {
+                        return JSON.parse(text);
+                    } catch (err) {
+                        throw Error('Method Not Found');
+                    }
+                })
+                .then(function (responseJSON) {
+                    petResult = responseJSON;
+                    showChart();
+                })
+        }
+            //getChartData();
+    </script>
+}
+
